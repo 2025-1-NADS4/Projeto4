@@ -1,0 +1,347 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DCED7287-72FF-49B8-9AAC-A7F617A0CA4D}|Fasor.Infrastructure\\Fasor.Infrastructure.csproj|c:\\users\\giovanne\\source\\repos\\fasor\\fasor.infrastructure\\repositories\\companyservices\\interfaces\\icompanyservicesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCED7287-72FF-49B8-9AAC-A7F617A0CA4D}|Fasor.Infrastructure\\Fasor.Infrastructure.csproj|solutionrelative:fasor.infrastructure\\repositories\\companyservices\\interfaces\\icompanyservicesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCED7287-72FF-49B8-9AAC-A7F617A0CA4D}|Fasor.Infrastructure\\Fasor.Infrastructure.csproj|c:\\users\\giovanne\\source\\repos\\fasor\\fasor.infrastructure\\fasor.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{DCED7287-72FF-49B8-9AAC-A7F617A0CA4D}|Fasor.Infrastructure\\Fasor.Infrastructure.csproj|solutionrelative:fasor.infrastructure\\fasor.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCED7287-72FF-49B8-9AAC-A7F617A0CA4D}|Fasor.Infrastructure\\Fasor.Infrastructure.csproj|c:\\users\\giovanne\\source\\repos\\fasor\\fasor.infrastructure\\repositories\\rideoptions\\rideoptionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCED7287-72FF-49B8-9AAC-A7F617A0CA4D}|Fasor.Infrastructure\\Fasor.Infrastructure.csproj|solutionrelative:fasor.infrastructure\\repositories\\rideoptions\\rideoptionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4209474-09F3-4638-8C20-3959AB481F0F}|Fasor.Api\\Fasor.Api.csproj|c:\\users\\giovanne\\source\\repos\\fasor\\fasor.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4209474-09F3-4638-8C20-3959AB481F0F}|Fasor.Api\\Fasor.Api.csproj|solutionrelative:fasor.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCED7287-72FF-49B8-9AAC-A7F617A0CA4D}|Fasor.Infrastructure\\Fasor.Infrastructure.csproj|c:\\users\\giovanne\\source\\repos\\fasor\\fasor.infrastructure\\repositories\\ridequotes\\ridequoterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCED7287-72FF-49B8-9AAC-A7F617A0CA4D}|Fasor.Infrastructure\\Fasor.Infrastructure.csproj|solutionrelative:fasor.infrastructure\\repositories\\ridequotes\\ridequoterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCED7287-72FF-49B8-9AAC-A7F617A0CA4D}|Fasor.Infrastructure\\Fasor.Infrastructure.csproj|c:\\users\\giovanne\\source\\repos\\fasor\\fasor.infrastructure\\repositories\\ridequotes\\interfaces\\iridequoterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCED7287-72FF-49B8-9AAC-A7F617A0CA4D}|Fasor.Infrastructure\\Fasor.Infrastructure.csproj|solutionrelative:fasor.infrastructure\\repositories\\ridequotes\\interfaces\\iridequoterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCED7287-72FF-49B8-9AAC-A7F617A0CA4D}|Fasor.Infrastructure\\Fasor.Infrastructure.csproj|c:\\users\\giovanne\\source\\repos\\fasor\\fasor.infrastructure\\repositories\\rideoptions\\interfaces\\irideoptionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCED7287-72FF-49B8-9AAC-A7F617A0CA4D}|Fasor.Infrastructure\\Fasor.Infrastructure.csproj|solutionrelative:fasor.infrastructure\\repositories\\rideoptions\\interfaces\\irideoptionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCED7287-72FF-49B8-9AAC-A7F617A0CA4D}|Fasor.Infrastructure\\Fasor.Infrastructure.csproj|c:\\users\\giovanne\\source\\repos\\fasor\\fasor.infrastructure\\repositories\\companies\\companyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCED7287-72FF-49B8-9AAC-A7F617A0CA4D}|Fasor.Infrastructure\\Fasor.Infrastructure.csproj|solutionrelative:fasor.infrastructure\\repositories\\companies\\companyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCED7287-72FF-49B8-9AAC-A7F617A0CA4D}|Fasor.Infrastructure\\Fasor.Infrastructure.csproj|c:\\users\\giovanne\\source\\repos\\fasor\\fasor.infrastructure\\repositories\\users\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCED7287-72FF-49B8-9AAC-A7F617A0CA4D}|Fasor.Infrastructure\\Fasor.Infrastructure.csproj|solutionrelative:fasor.infrastructure\\repositories\\users\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCED7287-72FF-49B8-9AAC-A7F617A0CA4D}|Fasor.Infrastructure\\Fasor.Infrastructure.csproj|c:\\users\\giovanne\\source\\repos\\fasor\\fasor.infrastructure\\repositories\\companyservices\\companyservicesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCED7287-72FF-49B8-9AAC-A7F617A0CA4D}|Fasor.Infrastructure\\Fasor.Infrastructure.csproj|solutionrelative:fasor.infrastructure\\repositories\\companyservices\\companyservicesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCED7287-72FF-49B8-9AAC-A7F617A0CA4D}|Fasor.Infrastructure\\Fasor.Infrastructure.csproj|c:\\users\\giovanne\\source\\repos\\fasor\\fasor.infrastructure\\repositories\\companies\\interfaces\\icompanyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCED7287-72FF-49B8-9AAC-A7F617A0CA4D}|Fasor.Infrastructure\\Fasor.Infrastructure.csproj|solutionrelative:fasor.infrastructure\\repositories\\companies\\interfaces\\icompanyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4209474-09F3-4638-8C20-3959AB481F0F}|Fasor.Api\\Fasor.Api.csproj|c:\\users\\giovanne\\source\\repos\\fasor\\fasor.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E4209474-09F3-4638-8C20-3959AB481F0F}|Fasor.Api\\Fasor.Api.csproj|solutionrelative:fasor.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCED7287-72FF-49B8-9AAC-A7F617A0CA4D}|Fasor.Infrastructure\\Fasor.Infrastructure.csproj|c:\\users\\giovanne\\source\\repos\\fasor\\fasor.infrastructure\\repositories\\users\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCED7287-72FF-49B8-9AAC-A7F617A0CA4D}|Fasor.Infrastructure\\Fasor.Infrastructure.csproj|solutionrelative:fasor.infrastructure\\repositories\\users\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A79988E-7072-4AB3-AA01-8B246ED6614C}|Fasor.Domain\\Fasor.Domain.csproj|c:\\users\\giovanne\\source\\repos\\fasor\\fasor.domain\\aggregates\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A79988E-7072-4AB3-AA01-8B246ED6614C}|Fasor.Domain\\Fasor.Domain.csproj|solutionrelative:fasor.domain\\aggregates\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A79988E-7072-4AB3-AA01-8B246ED6614C}|Fasor.Domain\\Fasor.Domain.csproj|c:\\users\\giovanne\\source\\repos\\fasor\\fasor.domain\\aggregates\\company.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A79988E-7072-4AB3-AA01-8B246ED6614C}|Fasor.Domain\\Fasor.Domain.csproj|solutionrelative:fasor.domain\\aggregates\\company.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4209474-09F3-4638-8C20-3959AB481F0F}|Fasor.Api\\Fasor.Api.csproj|c:\\users\\giovanne\\source\\repos\\fasor\\fasor.api\\fasor.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{E4209474-09F3-4638-8C20-3959AB481F0F}|Fasor.Api\\Fasor.Api.csproj|solutionrelative:fasor.api\\fasor.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A79988E-7072-4AB3-AA01-8B246ED6614C}|Fasor.Domain\\Fasor.Domain.csproj|c:\\users\\giovanne\\source\\repos\\fasor\\fasor.domain\\aggregates\\companyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A79988E-7072-4AB3-AA01-8B246ED6614C}|Fasor.Domain\\Fasor.Domain.csproj|solutionrelative:fasor.domain\\aggregates\\companyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A79988E-7072-4AB3-AA01-8B246ED6614C}|Fasor.Domain\\Fasor.Domain.csproj|c:\\users\\giovanne\\source\\repos\\fasor\\fasor.domain\\aggregates\\ridequote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A79988E-7072-4AB3-AA01-8B246ED6614C}|Fasor.Domain\\Fasor.Domain.csproj|solutionrelative:fasor.domain\\aggregates\\ridequote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A79988E-7072-4AB3-AA01-8B246ED6614C}|Fasor.Domain\\Fasor.Domain.csproj|c:\\users\\giovanne\\source\\repos\\fasor\\fasor.domain\\aggregates\\rideoption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A79988E-7072-4AB3-AA01-8B246ED6614C}|Fasor.Domain\\Fasor.Domain.csproj|solutionrelative:fasor.domain\\aggregates\\rideoption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IRideQuoteRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Infrastructure\\Repositories\\RideQuotes\\Interfaces\\IRideQuoteRepository.cs",
+              "RelativeDocumentMoniker": "Fasor.Infrastructure\\Repositories\\RideQuotes\\Interfaces\\IRideQuoteRepository.cs",
+              "ToolTip": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Infrastructure\\Repositories\\RideQuotes\\Interfaces\\IRideQuoteRepository.cs",
+              "RelativeToolTip": "Fasor.Infrastructure\\Repositories\\RideQuotes\\Interfaces\\IRideQuoteRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T00:23:01.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RideQuoteRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Infrastructure\\Repositories\\RideQuotes\\RideQuoteRepository.cs",
+              "RelativeDocumentMoniker": "Fasor.Infrastructure\\Repositories\\RideQuotes\\RideQuoteRepository.cs",
+              "ToolTip": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Infrastructure\\Repositories\\RideQuotes\\RideQuoteRepository.cs",
+              "RelativeToolTip": "Fasor.Infrastructure\\Repositories\\RideQuotes\\RideQuoteRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T00:22:09.371Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IRideOptionRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Infrastructure\\Repositories\\RideOptions\\Interfaces\\IRideOptionRepository.cs",
+              "RelativeDocumentMoniker": "Fasor.Infrastructure\\Repositories\\RideOptions\\Interfaces\\IRideOptionRepository.cs",
+              "ToolTip": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Infrastructure\\Repositories\\RideOptions\\Interfaces\\IRideOptionRepository.cs",
+              "RelativeToolTip": "Fasor.Infrastructure\\Repositories\\RideOptions\\Interfaces\\IRideOptionRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T00:21:42.471Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RideOptionRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Infrastructure\\Repositories\\RideOptions\\RideOptionRepository.cs",
+              "RelativeDocumentMoniker": "Fasor.Infrastructure\\Repositories\\RideOptions\\RideOptionRepository.cs",
+              "ToolTip": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Infrastructure\\Repositories\\RideOptions\\RideOptionRepository.cs",
+              "RelativeToolTip": "Fasor.Infrastructure\\Repositories\\RideOptions\\RideOptionRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T00:21:18.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Fasor.Infrastructure",
+              "DocumentMoniker": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Infrastructure\\Fasor.Infrastructure.csproj",
+              "RelativeDocumentMoniker": "Fasor.Infrastructure\\Fasor.Infrastructure.csproj",
+              "ToolTip": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Infrastructure\\Fasor.Infrastructure.csproj",
+              "RelativeToolTip": "Fasor.Infrastructure\\Fasor.Infrastructure.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-29T00:12:49.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ICompanyServicesRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Infrastructure\\Repositories\\CompanyServices\\Interfaces\\ICompanyServicesRepository.cs",
+              "RelativeDocumentMoniker": "Fasor.Infrastructure\\Repositories\\CompanyServices\\Interfaces\\ICompanyServicesRepository.cs",
+              "ToolTip": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Infrastructure\\Repositories\\CompanyServices\\Interfaces\\ICompanyServicesRepository.cs",
+              "RelativeToolTip": "Fasor.Infrastructure\\Repositories\\CompanyServices\\Interfaces\\ICompanyServicesRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T00:16:36.379Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Api\\Program.cs",
+              "RelativeDocumentMoniker": "Fasor.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Api\\Program.cs",
+              "RelativeToolTip": "Fasor.Api\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T00:51:38.432Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CompanyServicesRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Infrastructure\\Repositories\\CompanyServices\\CompanyServicesRepository.cs",
+              "RelativeDocumentMoniker": "Fasor.Infrastructure\\Repositories\\CompanyServices\\CompanyServicesRepository.cs",
+              "ToolTip": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Infrastructure\\Repositories\\CompanyServices\\CompanyServicesRepository.cs",
+              "RelativeToolTip": "Fasor.Infrastructure\\Repositories\\CompanyServices\\CompanyServicesRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T00:17:09.777Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CompanyRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Infrastructure\\Repositories\\Companies\\CompanyRepository.cs",
+              "RelativeDocumentMoniker": "Fasor.Infrastructure\\Repositories\\Companies\\CompanyRepository.cs",
+              "ToolTip": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Infrastructure\\Repositories\\Companies\\CompanyRepository.cs",
+              "RelativeToolTip": "Fasor.Infrastructure\\Repositories\\Companies\\CompanyRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T00:14:59.166Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ICompanyRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Infrastructure\\Repositories\\Companies\\Interfaces\\ICompanyRepository.cs",
+              "RelativeDocumentMoniker": "Fasor.Infrastructure\\Repositories\\Companies\\Interfaces\\ICompanyRepository.cs",
+              "ToolTip": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Infrastructure\\Repositories\\Companies\\Interfaces\\ICompanyRepository.cs",
+              "RelativeToolTip": "Fasor.Infrastructure\\Repositories\\Companies\\Interfaces\\ICompanyRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T00:14:19.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Infrastructure\\Repositories\\Users\\UserRepository.cs",
+              "RelativeDocumentMoniker": "Fasor.Infrastructure\\Repositories\\Users\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Infrastructure\\Repositories\\Users\\UserRepository.cs",
+              "RelativeToolTip": "Fasor.Infrastructure\\Repositories\\Users\\UserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T22:45:48.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "Fasor.Api\\appsettings.json",
+              "ToolTip": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Api\\appsettings.json",
+              "RelativeToolTip": "Fasor.Api\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-27T01:04:33.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Fasor.Api",
+              "DocumentMoniker": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Api\\Fasor.Api.csproj",
+              "RelativeDocumentMoniker": "Fasor.Api\\Fasor.Api.csproj",
+              "ToolTip": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Api\\Fasor.Api.csproj",
+              "RelativeToolTip": "Fasor.Api\\Fasor.Api.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-27T00:56:00.048Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Infrastructure\\Repositories\\Users\\Interfaces\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "Fasor.Infrastructure\\Repositories\\Users\\Interfaces\\IUserRepository.cs",
+              "ToolTip": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Infrastructure\\Repositories\\Users\\Interfaces\\IUserRepository.cs",
+              "RelativeToolTip": "Fasor.Infrastructure\\Repositories\\Users\\Interfaces\\IUserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T23:08:18.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Company.cs",
+              "DocumentMoniker": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Domain\\Aggregates\\Company.cs",
+              "RelativeDocumentMoniker": "Fasor.Domain\\Aggregates\\Company.cs",
+              "ToolTip": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Domain\\Aggregates\\Company.cs",
+              "RelativeToolTip": "Fasor.Domain\\Aggregates\\Company.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T21:55:49.819Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Domain\\Aggregates\\User.cs",
+              "RelativeDocumentMoniker": "Fasor.Domain\\Aggregates\\User.cs",
+              "ToolTip": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Domain\\Aggregates\\User.cs",
+              "RelativeToolTip": "Fasor.Domain\\Aggregates\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T21:49:39.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "RideQuote.cs",
+              "DocumentMoniker": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Domain\\Aggregates\\RideQuote.cs",
+              "RelativeDocumentMoniker": "Fasor.Domain\\Aggregates\\RideQuote.cs",
+              "ToolTip": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Domain\\Aggregates\\RideQuote.cs",
+              "RelativeToolTip": "Fasor.Domain\\Aggregates\\RideQuote.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBJwAoAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T01:12:52.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "RideOption.cs",
+              "DocumentMoniker": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Domain\\Aggregates\\RideOption.cs",
+              "RelativeDocumentMoniker": "Fasor.Domain\\Aggregates\\RideOption.cs",
+              "ToolTip": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Domain\\Aggregates\\RideOption.cs",
+              "RelativeToolTip": "Fasor.Domain\\Aggregates\\RideOption.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T00:24:41.718Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CompanyService.cs",
+              "DocumentMoniker": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Domain\\Aggregates\\CompanyService.cs",
+              "RelativeDocumentMoniker": "Fasor.Domain\\Aggregates\\CompanyService.cs",
+              "ToolTip": "C:\\Users\\Giovanne\\source\\repos\\Fasor\\Fasor.Domain\\Aggregates\\CompanyService.cs",
+              "RelativeToolTip": "Fasor.Domain\\Aggregates\\CompanyService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T22:08:02.332Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
