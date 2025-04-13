@@ -9,9 +9,8 @@ namespace Fasor.Domain.Aggregates
     public class RideQuote
     {
         public Guid Id { get; set; }
-        public Guid UserId { get; set; }
         public User User { get; set; }
-        public Guid RideOptionId { get; set; }
+        public DateTime CreatedAt { get; set; }
         public ICollection<RideOption> RideOptions { get; set; }
 
     }
