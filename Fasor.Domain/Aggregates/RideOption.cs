@@ -1,4 +1,8 @@
-﻿namespace Fasor.Domain.Aggregates
+﻿using ErrorOr;
+using Fasor.Domain.Shared.Errors;
+using System.Numerics;
+
+namespace Fasor.Domain.Aggregates
 {
     public class RideOption
     {
@@ -30,6 +34,16 @@
         {
              
         }
+
+        public ErrorOr<bool> ValidateRideOptionIsValidByTime(RideQuote rideQuote)
+        {
+            bool isExpired = DateTime.UtcNow - rideQuote.CreatedAt > TimeSpan.FromMinutes(5);
+
+            if (isExpired) return RideOptionsErrors.InvalidQuoteTime;
+
+            return true;
+        }
+        
 
     }
 }
