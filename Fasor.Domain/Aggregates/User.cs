@@ -1,7 +1,4 @@
-﻿using System.Reflection;
-using System.Security.Cryptography;
-
-namespace Fasor.Domain.Aggregates
+﻿namespace Fasor.Domain.Aggregates
 {
     public class User
     {
@@ -14,7 +11,7 @@ namespace Fasor.Domain.Aggregates
         public IEnumerable<Company> Preferences { get; set; }
 
 
-        public User(string name, string surname, string cpf, string email, DateTime DateBirth, IEnumerable<Company> Preferences)
+        public User(string name, string surname, string cpf, string email, DateTime dateBirth, IEnumerable<Company> preferences)
         {
 
             Id = Guid.NewGuid();
@@ -22,11 +19,9 @@ namespace Fasor.Domain.Aggregates
             Surname = surname;
             Cpf = cpf;
             Email = email;
-            DateBirth = this.DateBirth;
-            Preferences = this.Preferences;
+            DateBirth = dateBirth;
+            Preferences = preferences;
             
         }
-
-
     }
 }
