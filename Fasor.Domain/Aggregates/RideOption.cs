@@ -15,13 +15,11 @@ namespace Fasor.Domain.Aggregates
         public DateTime EstimatedTime { get; set; }
         public string UrlRedirect { get; set; }
         public Guid CompanyServiceId { get; set; }
-        public string NameService { get; set; }
         public CompanyService CompanyService { get; set; }
 
-        public RideOption( CompanyService nameService, DateTime timeRide, RideQuote rideQuote, DateTime estimatedTime, CompanyService companyService, string urlRedirect, decimal price)
+        public RideOption( CompanyService companyService, DateTime timeRide, RideQuote rideQuote, DateTime estimatedTime, string urlRedirect, decimal price)
         {
             Id = Guid.NewGuid();
-            NameService = nameService.NameService;
             QuoteId = rideQuote.Id; 
             Price = price;
             EstimatedTime = estimatedTime;
@@ -42,8 +40,7 @@ namespace Fasor.Domain.Aggregates
             if (isExpired) return RideOptionsErrors.InvalidQuoteTime;
 
             return true;
-        }
-        
+        }       
 
     }
 }
