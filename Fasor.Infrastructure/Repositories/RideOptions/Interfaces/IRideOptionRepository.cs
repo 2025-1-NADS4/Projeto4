@@ -11,7 +11,7 @@ namespace Fasor.Infrastructure.Repositories.RideOptions.Interfaces
     {
         Task<RideOption> GetRideOptionByIdAsync(Guid id);
         Task<IEnumerable<RideOption>> GetAllRideOptionsByQuoteAsync(Guid idQuote);
-        Task<RideOption> CreateRideOptionAsync(CompanyService companyService, DateTime timeRide, RideQuote rideQuote,
+        Task<RideOption> CreateRideOptionAsync(CompanyAppService companyService, DateTime timeRide, RideQuote rideQuote,
             DateTime estimatedTime, string urlRedirect, decimal price);
         Task<bool> DeleteRideOptionAsync(Guid rideOptionId);
     }

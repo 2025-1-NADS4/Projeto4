@@ -7,7 +7,7 @@ namespace Fasor.Infrastructure.Repositories.RideOptions
 {
     public class RideOptionRepository(AppDbContext _context) : IRideOptionRepository
     {
-        public async Task<RideOption> CreateRideOptionAsync(CompanyService companyService, DateTime timeRide,
+        public async Task<RideOption> CreateRideOptionAsync(CompanyAppService companyService, DateTime timeRide,
             RideQuote rideQuote, DateTime estimatedTime, string urlRedirect, decimal price)
         {
             var rideOption = new RideOption(companyService, timeRide,
