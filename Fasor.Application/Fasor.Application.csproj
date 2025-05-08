@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Fasor.Domain\Fasor.Domain.csproj" />
+    <ProjectReference Include="..\Fasor.Infrastructure\Fasor.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
