@@ -12,6 +12,11 @@ namespace Fasor.Domain.Shared.Errors
         public static Error CpnjFormatInvalid { get; } =
             Error.Validation(
                 code: "Validation.CpnjFormatInvalid",
-                description: "O CNPJ deve conter 14 digitos."); 
+                description: "O CNPJ deve conter 14 digitos.");
+
+        public static Error CompanyNotFound { get; } =
+            Error.Validation(
+                code: "Validation.CompanyNotFound",
+                description: "A empresa não foi encontrada.");
     }
 }
