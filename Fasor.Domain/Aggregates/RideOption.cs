@@ -15,9 +15,9 @@ namespace Fasor.Domain.Aggregates
         public DateTime EstimatedTime { get; set; }
         public string UrlRedirect { get; set; }
         public Guid CompanyServiceId { get; set; }
-        public CompanyService CompanyService { get; set; }
+        public CompanyAppService CompanyService { get; set; }
 
-        public RideOption( CompanyService companyService, DateTime timeRide, RideQuote rideQuote, DateTime estimatedTime, string urlRedirect, decimal price)
+        public RideOption( CompanyAppService companyService, DateTime timeRide, RideQuote rideQuote, DateTime estimatedTime, string urlRedirect, decimal price)
         {
             Id = Guid.NewGuid();
             QuoteId = rideQuote.Id; 

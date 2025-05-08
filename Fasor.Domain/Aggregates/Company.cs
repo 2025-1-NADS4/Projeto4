@@ -8,17 +8,37 @@ namespace Fasor.Domain.Aggregates
         public Guid Id { get; private set; }
         public string TradeName { get; private set; }
         public string Cnpj { get; private set; }
-        public CompanyService CompanyServices { get; private set; }
+        public List<CompanyAppService>? CompanyAppServices { get; private set; }
         public bool IsActive { get; private set; }
 
         private Company() { }
-
-        public Company(string tradeName, string cnpj, CompanyService? companyService)
+        private Company(string tradeName, string cnpj)
         {
-            SetTradeName(tradeName);
-            SetCnpj(cnpj);
-            CompanyServices = companyService;
+            Id = Guid.NewGuid();
+            TradeName = tradeName;
+            Cnpj = cnpj;
             IsActive = true;
+        }
+        public static ErrorOr<Company>Create(string tradeName, string cnpj)
+        {
+            List<Error> errors = new();
+
+            var company = new Company();
+
+            var tradeNameResult = company.SetTradeName(tradeName);
+            if (tradeNameResult.IsError)
+                errors.AddRange(tradeNameResult.Errors);
+
+            var cnpjResult = company.SetCnpj(cnpj);
+            if (cnpjResult.IsError)
+                errors.AddRange(cnpjResult.Errors);
+
+            if (errors.Any())
+                return errors;
+
+            company.IsActive = false;
+
+            return company;
         }
 
         public void Inactivate()

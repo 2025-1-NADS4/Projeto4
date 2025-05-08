@@ -1,4 +1,7 @@
-﻿namespace Fasor.Domain.Aggregates
+﻿using ErrorOr;
+using System.Runtime.CompilerServices;
+
+namespace Fasor.Domain.Aggregates
 {
     public class User
     {
@@ -9,7 +12,6 @@
         public string Email { get; set; }
         public DateTime DateBirth { get; set; }
         public IEnumerable<Company> Preferences { get; set; }
-
 
         public User(string name, string surname, string cpf, string email, DateTime dateBirth, IEnumerable<Company> preferences)
         {
