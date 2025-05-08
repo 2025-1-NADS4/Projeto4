@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Fasor.Domain.Aggregates;
 
 namespace Fasor.Application.Services.RideQuotes.Interfaces
 {
-    internal class IRideQuoteService
+    public interface IRideQuoteService
     {
-    }
+        Task<RideQuote> CreateRideQuoteAsync(string originAddress, string destinationAddress, List<RideOption> rideOptions);
+
+        Task<RideQuote> GetRideQuoteByIdAsync(Guid id);
+
+    }  
 }
