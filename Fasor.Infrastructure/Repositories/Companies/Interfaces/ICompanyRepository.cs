@@ -1,17 +1,17 @@
-﻿using Fasor.Domain.Aggregates;
+﻿using ErrorOr;
+using Fasor.Domain.Aggregates;
 using System.Runtime.InteropServices;
 
 namespace Fasor.Infrastructure.Repositories.Companies.Interfaces
 {
     public interface ICompanyRepository
     {
-        Task<Company?> GetCompanyByIdAsync(Guid id);
-        Task<Company> CreateCompanyAsync(string tradeName, string cnpj, CompanyService? companyService);
+        Task <ErrorOr<Company?>> GetCompanyByIdAsync(Guid id);
+        Task <ErrorOr<Company>> CreateCompanyAsync(string tradeName, string cnpj);
         Task<IEnumerable<Company>> GetAllCompaniesAsync();
-        Task<bool> DeleteCompanyAsync(Guid id);
-        Task<Company> UpdateCompanyAsync(Company company);
-
-        Task<Company> CompanyInactiveAsync(Guid id);
-        Task<Company> CompanyActiveAsync(Guid id);
+        Task <ErrorOr<bool>> DeleteCompanyAsync(Guid id);
+        Task <ErrorOr<Company>> UpdateCompanyAsync(Company company);
+        Task <ErrorOr<Company>> CompanyInactiveAsync(Guid id);
+        Task <ErrorOr<Company>> CompanyActiveAsync(Guid id);
     }
 }
