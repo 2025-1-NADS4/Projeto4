@@ -1,4 +1,7 @@
+import { useRouter } from 'expo-router';
 import React, { useState, useEffect, useRef } from 'react';
+import { TouchableWithoutFeedback, Keyboard } from 'react-native';
+import DateTimePicker from '@react-native-community/datetimepicker';
 import {
   View,
   Text,
@@ -22,13 +25,31 @@ export default function HomeScreen() {
   const [location, setLocation] = useState(null);
   const [loading, setLoading] = useState(false);
   const mapRef = useRef(null);
+  const router = useRouter();
+
   const [originFocused, setOriginFocused] = useState(false);
   const [destinationFocused, setDestinationFocused] = useState(false);
+  const [horaSelecionada, setHoraSelecionada] = useState(null);
+  
+
   
   const [originInput, setOriginInput] = useState('');
   const [destinationInput, setDestinationInput] = useState('');
   const [originSuggestions, setOriginSuggestions] = useState([]);
   const [destinationSuggestions, setDestinationSuggestions] = useState([]);
+  const [mostrarHorario, setMostrarHorario] = useState(false);
+  const [dataHora, setDataHora] = useState(new Date());
+  const handleViajar = (dataHora) => {
+    // Coordenadas fictícias. Troque por Location.geocodeAsync ou Places API se quiser.
+    const origemCoords = { latitude: -23.5, longitude: -46.6 };
+    const destinoCoords = { latitude: -23.6, longitude: -46.7 };
+  }
+
+  const mostrarRelogio = () => {
+    setMostrarHorario(true); // mostra o componente condicionalmente
+      };
+    
+ 
 
   useEffect(() => {
     (async () => {
@@ -128,6 +149,42 @@ export default function HomeScreen() {
     }
   };
 
+  const handleViajarAgora = () => {
+    // Verifica se as coordenadas de origem e destino estão definidas
+    if (originCoordinates && destinationCoordinates) {
+      router.push({
+        pathname: '/cotacoes', // Supondo que sua tela de cotações seja chamada '/cotações'
+        query: {
+          origemLat: originCoordinates.latitude,
+          origemLng: originCoordinates.longitude,
+          destinoLat: destinationCoordinates.latitude,
+          destinoLng: destinationCoordinates.longitude,
+        }
+      });
+    } else {
+      alert('Defina a origem e o destino antes de viajar.');
+    }
+  };
+
+  const handleViajarMaisTarde = () => {
+    // Mesmo fluxo de viajar agora, mas com a hora selecionada
+    if (originCoordinates && destinationCoordinates) {
+      router.push({
+        pathname: '/cotacoes', 
+        query: {
+          origemLat: originCoordinates.latitude,
+          origemLng: originCoordinates.longitude,
+          destinoLat: destinationCoordinates.latitude,
+          destinoLng: destinationCoordinates.longitude,
+          horaSelecionada: dataHora.toISOString(), // Passando a hora selecionada para a próxima tela
+        }
+      });
+    } else {
+      alert('Defina a origem e o destino antes de viajar.');
+    }
+  };
+
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -145,7 +202,7 @@ export default function HomeScreen() {
               setOriginInput(text);
               fetchPlaces(text, true);
             }}
-            onKeyPress={({ nativeEvent }) => {
+           /* onKeyPress={({ nativeEvent }) => {
               if (nativeEvent.key === 'Backspace' && originInput === 'Minha localização atual') {
                 setOriginInput('');
                 setOriginCoordinates(null);
@@ -157,9 +214,10 @@ export default function HomeScreen() {
               setOriginFocused(false);
               setTimeout(() => setOriginSuggestions([]), 100); // timeout p/ evitar sumir ao clicar numa sugestão
             
-            }}
+            }} */
           
           />
+          
           <FlatList
             data={originSuggestions}
             keyExtractor={(item) => item.place_id}
@@ -178,11 +236,11 @@ export default function HomeScreen() {
               setDestinationInput(text);
               fetchPlaces(text, false); // false => campo destino
             }}
-            onFocus={() => setDestinationFocused(true)}
+           /* onFocus={() => setDestinationFocused(true)}
             onBlur={() => {
               setDestinationFocused(false);
               setTimeout(() => setDestinationSuggestions([]), 100);
-            }}
+            }}*/
           />
 
           
@@ -203,13 +261,41 @@ export default function HomeScreen() {
       </KeyboardAvoidingView>
 
       <View style={styles.buttonRow}>
-        <TouchableOpacity style={styles.button} disabled={loading}>
+        <TouchableOpacity style={styles.button} onPress={handleViajarAgora} disabled={loading}>
           <Text style={styles.buttonText}>Viajar agora</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} disabled={loading}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => {
+            setMostrarHorario(true);
+            mostrarRelogio();
+          }}
+          disabled={loading}
+        >
           <Text style={styles.buttonText}>Viajar mais tarde</Text>
         </TouchableOpacity>
+        {mostrarHorario && (
+        <DateTimePicker
+          value={dataHora}
+          mode="time"
+          is24Hour={true}
+          display="default"
+          onChange={(event, selectedDate) => {
+            if (event.type === "set" && selectedDate) {
+              setDataHora(selectedDate);
+              const hora = selectedDate.getHours();
+              const minuto = selectedDate.getMinutes();
+              setHoraSelecionada(`${hora}:${minuto < 10 ? `0${minuto}` : minuto}`);
+            }
+            setMostrarHorario(false); // esconde após selecionar ou cancelar
+            handleViajarMaisTarde();
+          }}
+        />
+      )}
+      
+
       </View>
+      
 
       {loading ? (
         <View style={styles.loadingContainer}>
@@ -245,7 +331,9 @@ export default function HomeScreen() {
       </View>
     </SafeAreaView>
   );
+
 }
+
 
 const styles = StyleSheet.create({
   container: {
