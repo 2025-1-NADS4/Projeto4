@@ -16,6 +16,8 @@ import {
 } from 'react-native';
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import * as Location from 'expo-location';
+import HeaderIndex from '../components/headerIndex';
+import InputCentral from '../components/inputCentral';
 
 const GOOGLE_API_KEY = 'AIzaSyDtauS1lmtuMouZS5XFGlIlDEFZ64wWML0'; // Substitua pela sua chave
 
@@ -49,7 +51,6 @@ export default function HomeScreen() {
     setMostrarHorario(true); // mostra o componente condicionalmente
       };
     
- 
 
   useEffect(() => {
     (async () => {
@@ -187,79 +188,9 @@ export default function HomeScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.headerText}>FASOR</Text>
-      </View>
 
-      <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
-        <View style={styles.inputsContainer}>
-          {/* Campo Origem */}
-          <TextInput
-            style={styles.input}
-            placeholder="Origem"
-            value={originInput}
-            onChangeText={(text) => {
-              setOriginInput(text);
-              fetchPlaces(text, true);
-            }}
-           /* onKeyPress={({ nativeEvent }) => {
-              if (nativeEvent.key === 'Backspace' && originInput === 'Minha localização atual') {
-                setOriginInput('');
-                setOriginCoordinates(null);
-                setOriginSuggestions([]);
-              }
-            }}
-            onFocus={() => setOriginFocused(true)}
-            onBlur={() => {
-              setOriginFocused(false);
-              setTimeout(() => setOriginSuggestions([]), 100); // timeout p/ evitar sumir ao clicar numa sugestão
-            
-            }} */
-          
-          />
-          
-          <FlatList
-            data={originSuggestions}
-            keyExtractor={(item) => item.place_id}
-            renderItem={({ item }) => (
-              <TouchableOpacity onPress={() => getCoordinates(item.place_id, true)}>
-                <Text style={styles.suggestionItem}>{item.description}</Text>
-              </TouchableOpacity>
-            )}
-          />
-
-          <TextInput
-            style={styles.input}
-            placeholder="Destino"
-            value={destinationInput}
-            onChangeText={(text) => {
-              setDestinationInput(text);
-              fetchPlaces(text, false); // false => campo destino
-            }}
-           /* onFocus={() => setDestinationFocused(true)}
-            onBlur={() => {
-              setDestinationFocused(false);
-              setTimeout(() => setDestinationSuggestions([]), 100);
-            }}*/
-          />
-
-          
-          <FlatList
-            data={destinationSuggestions}
-            keyExtractor={(item) => item.place_id}
-            renderItem={({ item }) => (
-              <TouchableOpacity onPress={() => getCoordinates(item.place_id, false)}>
-                <Text style={styles.suggestionItem}>{item.description}</Text>
-              </TouchableOpacity>
-            )}
-          />
-
-          <TouchableOpacity style={styles.button} onPress={setYourLocationAsOrigin} disabled={loading}>
-            <Text style={styles.buttonText}>Usar minha localização</Text>
-          </TouchableOpacity>
-        </View>
-      </KeyboardAvoidingView>
-
+      <HeaderIndex/>
+      <InputCentral></InputCentral>
       <View style={styles.buttonRow}>
         <TouchableOpacity style={styles.button} onPress={handleViajarAgora} disabled={loading}>
           <Text style={styles.buttonText}>Viajar agora</Text>
@@ -272,7 +203,7 @@ export default function HomeScreen() {
           }}
           disabled={loading}
         >
-          <Text style={styles.buttonText}>Viajar mais tarde</Text>
+          <Text style={styles.buttonText}>Viaje mais tarde</Text>
         </TouchableOpacity>
         {mostrarHorario && (
         <DateTimePicker
@@ -293,7 +224,6 @@ export default function HomeScreen() {
         />
       )}
       
-
       </View>
       
 
@@ -338,19 +268,15 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: 'center',
+    flexDirection: 'column',
     backgroundColor: '#fff',
   },
-  header: {
-    backgroundColor: '#ff69b4',
-    padding: 20,
-  },
-  headerText: {
-    color: '#fff',
-    fontSize: 24,
-    textAlign: 'center',
-  },
+
   inputsContainer: {
-    padding: 16,
+    justifyContent: 'center',
+    alignItems: 'center'
+    // padding: 16,
   },
   input: {
     height: 44,
@@ -369,26 +295,32 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
   },
   buttonRow: {
+    height: 200,
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
+    gap: 50,
     marginVertical: 16,
+    width: '100%',
   },
   button: {
-    backgroundColor: '#ff69b4',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 8,
+    height: 110,
+    width: 110,
+    justifyContent: 'center',
+    textAlign: 'center',
+    alignItems: 'center',
+    borderColor: '#D9D9D9',
+    borderWidth: 2,
+    top: 90,
+    borderRadius: 20,
   },
   buttonText: {
-    color: '#fff',
     fontWeight: 'bold',
   },
   map: {
     flex: 1,
-    margin: 16,
-    borderColor: '#ccc',
+    borderColor: '#D9D9D9',
     borderWidth: 1,
-    borderRadius: 8,
+    width: '100%',
   },
   footer: {
     flexDirection: 'row',
@@ -396,6 +328,7 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
     borderTopWidth: 1,
     borderColor: '#ccc',
+    width: '100%',
   },
   loadingContainer: {
     flex: 1,

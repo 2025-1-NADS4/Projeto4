@@ -1,0 +1,69 @@
+      <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+        <View style={styles.inputsContainer}>
+          
+          {/* Campo Origem */}
+          {/* <TextInput
+            style={styles.input}
+            placeholder="Origem"
+            value={originInput}
+            onChangeText={(text) => {
+              setOriginInput(text);
+              fetchPlaces(text, true);
+            }} */}
+           /* onKeyPress={({ nativeEvent }) => {
+              if (nativeEvent.key === 'Backspace' && originInput === 'Minha localização atual') {
+                setOriginInput('');
+                setOriginCoordinates(null);
+                setOriginSuggestions([]);
+              }
+            }}
+            onFocus={() => setOriginFocused(true)}
+            onBlur={() => {
+              setOriginFocused(false);
+              setTimeout(() => setOriginSuggestions([]), 100); // timeout p/ evitar sumir ao clicar numa sugestão
+            
+            }} */
+          
+          />
+          
+          <FlatList
+            data={originSuggestions}
+            keyExtractor={(item) => item.place_id}
+            renderItem={({ item }) => (
+              <TouchableOpacity onPress={() => getCoordinates(item.place_id, true)}>
+                <Text style={styles.suggestionItem}>{item.description}</Text>
+              </TouchableOpacity>
+            )}
+          />
+{/* 
+          <TextInput
+            style={styles.input}
+            placeholder="Destino"
+            value={destinationInput}
+            onChangeText={(text) => {
+              setDestinationInput(text);
+              fetchPlaces(text, false); // false => campo destino
+            }} */}
+           /* onFocus={() => setDestinationFocused(true)}
+            onBlur={() => {
+              setDestinationFocused(false);
+              setTimeout(() => setDestinationSuggestions([]), 100);
+            }}*/
+          />
+
+          
+          <FlatList
+            data={destinationSuggestions}
+            keyExtractor={(item) => item.place_id}
+            renderItem={({ item }) => (
+              <TouchableOpacity onPress={() => getCoordinates(item.place_id, false)}>
+                <Text style={styles.suggestionItem}>{item.description}</Text>
+              </TouchableOpacity>
+            )}
+          />
+
+          <TouchableOpacity style={styles.button} onPress={setYourLocationAsOrigin} disabled={loading}>
+            <Text style={styles.buttonText}>Usar minha localização</Text>
+          </TouchableOpacity>
+        </View>
+        </KeyboardAvoidingView>
