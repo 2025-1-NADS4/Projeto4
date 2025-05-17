@@ -69,8 +69,8 @@ Para rodar a aplicação Mobile apenas clone o repositório de Front-end e rode 
 Para abrir este projeto você necessita das seguintes ferramentas:
 
 -<a href="https://www.jetbrains.com/pt-br/pycharm/download/?section=windows">PyCharm</a><br>
--<a href="https://www.jetbrains.com/pt-br/pycharm/download/?section=windows">Visual Studio</a><br>
--<a href="https://www.jetbrains.com/pt-br/pycharm/download/?section=windows">Visual Studio Code</a>
+-<a href="https://visualstudio.microsoft.com/pt-br/downloads/">Visual Studio</a><br>
+-<a href="https://code.visualstudio.com/download">Visual Studio Code</a>
 
 Mobile:
 
