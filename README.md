@@ -91,14 +91,25 @@ Para abrir este projeto você necessita das seguintes ferramentas:
 
 -<a href="https://godotengine.org/download">GODOT</a>
 
+Mobile:
+
 ```sh
-make install
-npm test
-Coloque código do prompt de comnando se for necessário
+npm install
+npm start
 ```
 
+IA:
+
+```sh
+pip install -r requirements.txt
+
+uvicorn app.main:app --reload
+
+```
+Acesse o IP indicado incluindo o /docs
+
 ## 📋 Licença/License
-Utilize o link <https://chooser-beta.creativecommons.org/> para fazer uma licença CC BY 4.0.
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/2025-1-NADS4/Projeto4/">FASOR</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" <a href="https://www.linkedin.com/in/giovanne-braga-0a4288280/">Giovanne Braga</a>, <a href="https://www.linkedin.com/in/isaac-fs-santos/">Isaac Santos</a>, <a href="https://www.linkedin.com/in/icaro-dellalo/">Icaro Dellalo</a>, <a href="https://www.linkedin.com/in/caroline-gomes-446882230/">Caroline Gomes</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
 
 ## 🎓 Referências
 
