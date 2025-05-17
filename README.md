@@ -20,7 +20,7 @@
 </p>
 
 FASOR - Fare Advisor é um aplicativo que auxilia usuários de transporte por aplicativo (como Uber e 99) a comparar em tempo real as tarifas praticadas por diferentes serviços.
-Para isso, foi criado e treinado um modelo de machine learning com base em uma base de dados real fornecida, capaz de prever os valores médios das tarifas em determinadas condições. Com essa previsão, o app exibe ao usuário as opções conforme local de partida, destino, horário e demanda.
+Para isso, foi criado e treinado um modelo de machine learning com base em uma base de dados real fornecida, capaz de prever os valores médios das tarifas em determinadas condições. Com essa previsão, o app exibe ao usuário as opções conforme local de partida, destino, horário e demanda.<br>
 Esse desafio foi proposto pela FECAP como entrega do Projeto Integrador de Startup Digital
 
 ## 🛠 Estrutura de pastas
