@@ -11,7 +11,7 @@
 
 ## Integrantes: <a href="https://www.linkedin.com/in/giovanne-braga-0a4288280/">Giovanne Braga</a>, <a href="https://www.linkedin.com/in/isaac-fs-santos/">Isaac Santos</a>, <a href="https://www.linkedin.com/in/caroline-gomes-446882230/">Caroline Gomes</a>, <a href="https://www.linkedin.com/in/icaro-dellalo/">Icaro Luis Dellalo</a>
 
-## Professores Orientadores: <a href="https://www.linkedin.com/in/victorbarq/">Dr. Victor Von Doom</a>, <a href="https://www.linkedin.com/in/victorbarq/">Me. Saitama</a>, <a href="https://www.linkedin.com/in/victorbarq/">Dr. Strange</a>, <a href="https://www.linkedin.com/in/victorbarq/">Me. Yoda</a>, <a href="https://www.linkedin.com/in/victorbarq/">Dr. Gero</a>
+## Professores Orientadores: <a href="https://www.linkedin.com/in/ronaldo-araujo-pinto-3542811a/">Ronaldo Araújo</a>, <a href="https://www.linkedin.com/in/eduardo-savino-gomes-77833a10/">Eduardo Savino</a>, <a href="https://www.linkedin.com/in/lucymari/?originalSubdomain=br">Lucy Mari</a>, <a href="https://www.linkedin.com/in/edsonbarbero/">Edson Barbero</a>, <a href="https://www.linkedin.com/in/aimarlopes/">Aimar Lopes</a>
 
 ## Descrição
 
