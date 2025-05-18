@@ -125,10 +125,10 @@ const styles = StyleSheet.create({
   },
 overlayMap: {
   position: 'absolute',
-  top: 20, // distância do topo da tela (ajuste conforme necessário)
+  top: 20, 
   alignSelf: 'center',
   width: '90%',
-  height: '35%', // altura próxima à do header (ajuste conforme o tamanho do seu HeaderIndex)
+  height: '35%',
   borderRadius: 12,
   borderWidth: 2,
   borderColor: '#D9D9D9',
