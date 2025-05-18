@@ -11,9 +11,13 @@ namespace Fasor.Domain.Aggregates
         public string Cpf { get; set; }
         public string Email { get; set; }
         public DateTime DateBirth { get; set; }
-        public IEnumerable<Company> Preferences { get; set; }
+        public Guid CompanyId { get; set; }
+        public Company Company { get; set; }
+        public List<RideQuote>? RideQuotes { get; set; } = new();
 
-        public User(string name, string surname, string cpf, string email, DateTime dateBirth, IEnumerable<Company> preferences)
+
+        public User() { }
+        public User(string name, string surname, string cpf, string email, DateTime dateBirth)
         {
 
             Id = Guid.NewGuid();
@@ -21,9 +25,7 @@ namespace Fasor.Domain.Aggregates
             Surname = surname;
             Cpf = cpf;
             Email = email;
-            DateBirth = dateBirth;
-            Preferences = preferences;
-            
+            DateBirth = dateBirth;            
         }
     }
 }

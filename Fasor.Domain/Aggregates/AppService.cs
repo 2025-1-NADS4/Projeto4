@@ -3,30 +3,30 @@ using Fasor.Domain.Shared.Errors;
 
 namespace Fasor.Domain.Aggregates
 {
-    public class CompanyAppService
+    public class AppService
     {
         public Guid Id { get; private set; }
-        public Guid IdCompany { get; private set; }
-        public Company Company { get; private set; }
+        public Guid CompanyRideId { get; private set; }
+        public CompanyRide CompanyRide { get; private set; }
         public string NameService { get; private set; }
         public bool IsActive { get; private set; }
 
-        private CompanyAppService()
+        private AppService()
         {
             
         }
 
-        private CompanyAppService(Guid idCompany, string nameService)
+        private AppService(string nameService)
         {
-            IdCompany = idCompany;
+            Id = Guid.NewGuid();
             NameService = nameService; 
         }
 
-        public static ErrorOr<CompanyAppService> Create( Guid idCompany, string nameService)
+        public static ErrorOr<AppService> Create(Guid companyRideId, string nameService)
         {
-            List<Error>errors = new();
+            List<Error> errors = new();
 
-            var companyAppService = new CompanyAppService();
+            var companyAppService = new AppService();
 
             var nameServiceResult = companyAppService.SetNameService(nameService);
             if (nameServiceResult.IsError)
@@ -35,12 +35,12 @@ namespace Fasor.Domain.Aggregates
             if (errors.Any())
                 return errors;
 
-            companyAppService.IdCompany = idCompany;
+            companyAppService.Id = Guid.NewGuid();
+            companyAppService.CompanyRideId = companyRideId;
             companyAppService.IsActive = true;
 
             return companyAppService;
         }
-
 
 
         public void Inactivate()

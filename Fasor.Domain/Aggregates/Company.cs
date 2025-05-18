@@ -6,16 +6,17 @@ namespace Fasor.Domain.Aggregates
     public class Company
     {
         public Guid Id { get; private set; }
-        public string TradeName { get; private set; }
+        public string NameService { get; private set; }
         public string Cnpj { get; private set; }
-        public List<CompanyAppService>? CompanyAppServices { get; private set; }
         public bool IsActive { get; private set; }
+        public List<CompanyCompanyRide> CompanyCompanyRides { get; set; } = new();
+        public List<User>? Users { get; set; } = new();
 
         private Company() { }
-        private Company(string tradeName, string cnpj)
+        private Company(string nameService, string cnpj)
         {
             Id = Guid.NewGuid();
-            TradeName = tradeName;
+            NameService = nameService;
             Cnpj = cnpj;
             IsActive = true;
         }
@@ -56,7 +57,7 @@ namespace Fasor.Domain.Aggregates
             if (string.IsNullOrWhiteSpace(tradeName))
                 return CompanyErrors.TradeNameIsRequired;
 
-            return TradeName = tradeName;
+            return NameService = tradeName;
         }
 
         public ErrorOr<string> SetCnpj(string cnpj)
