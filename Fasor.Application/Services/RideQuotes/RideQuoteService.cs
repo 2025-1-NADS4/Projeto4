@@ -8,9 +8,16 @@ namespace Fasor.Application.Services.RideQuotes
         IRideQuoteRepository _RideQuoteRepository
         ) : IRideQuoteService
     {
-        public async Task<RideQuote> CreateRideQuoteAsync(string originAddress, string destinationAddress, List<RideOption> rideOptions)
+        public async Task<RideQuote> CreateRideQuoteAsync
+         (string origindAddress,
+         string destinationAddress,
+         float latitudeOrigin,
+         float longitudeOrigin,
+         float latitudeDestination,
+         float longitudeDestination,
+         List<RideOption> rideOptions)
         {
-            var rideQuote = await _RideQuoteRepository.CreateRideQuoteAsync(originAddress, destinationAddress, rideOptions);
+            var rideQuote = await _RideQuoteRepository.CreateRideQuoteAsync(origindAddress, destinationAddress, latitudeOrigin, longitudeOrigin, latitudeDestination, longitudeDestination, rideOptions);
             return rideQuote;
         }
 
