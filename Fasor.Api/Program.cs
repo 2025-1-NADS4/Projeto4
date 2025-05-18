@@ -1,5 +1,5 @@
 
-using Fasor.Domain.Aggregates.Data;
+using Fasor.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
 
