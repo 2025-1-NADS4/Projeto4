@@ -10,7 +10,7 @@ const GOOGLE_MAPS_APIKEY = 'AIzaSyDtauS1lmtuMouZS5XFGlIlDEFZ64wWML0';
 export default function CotacoesScreen() {
   const { origemLat, origemLng, destinoLat, destinoLng, horario } = useLocalSearchParams();
   const router = useRouter();
-  
+
   const origin = {
     latitude: parseFloat(origemLat),
     longitude: parseFloat(origemLng),
