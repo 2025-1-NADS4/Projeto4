@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fasor.Infrastructure", "Fas
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fasor.Application", "Fasor.Application\Fasor.Application.csproj", "{9D94EC22-B50E-4B39-91A5-FA4C5104D9B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fasor.Api", "Fasor.Api\Fasor.Api.csproj", "{E4209474-09F3-4638-8C20-3959AB481F0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fasor.Api", "Fasor.Api\Fasor.Api.csproj", "{E4209474-09F3-4638-8C20-3959AB481F0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
