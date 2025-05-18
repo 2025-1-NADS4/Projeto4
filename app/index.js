@@ -32,7 +32,7 @@ export default function HomeScreen() {
         return;
       }
 
-      Location.watchPositionAsync(
+     subscription = await Location.watchPositionAsync(
         { accuracy: Location.Accuracy.Balanced, timeInterval: 1000, distanceInterval: 10 },
         (locationData) => {
           setLocation(locationData);
@@ -48,7 +48,7 @@ export default function HomeScreen() {
     getLocation();
 
     return () => {
-      Location.removeWatchAsync();
+      if (subscription) subscription.remove();
     };
   }, []);
 
@@ -175,7 +175,7 @@ const styles = StyleSheet.create({
   buttonText: {
     fontWeight: 'bold',
     textAlign: 'center',
-    fontSize: "11",
+    fontSize: 11,
     position: "absolute",
     bottom: 15,
 

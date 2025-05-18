@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, TouchableOpacity, Animated, Dimensions, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 
 const { width: screenWidth } = Dimensions.get('window');
 const tabIcons: Array<'home-outline' | 'person-outline' | 'settings-outline'> = ['home-outline', 'person-outline', 'settings-outline'];
@@ -14,6 +15,7 @@ const circleSize = 70;
 const Footer = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const translateX = React.useRef(new Animated.Value(0)).current;
+  const router = useRouter();
 
 const moveIndicator = (index: number) => {
   Animated.spring(translateX, {
@@ -52,6 +54,9 @@ const moveIndicator = (index: number) => {
               onPress={() => {
                 setActiveIndex(index);
                 moveIndicator(index);
+                if (index === 0) {
+                  router.push('/'); // ✅ Redireciona para index.js
+                }
               }}
             >
               <Ionicons
