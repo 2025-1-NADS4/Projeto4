@@ -55,7 +55,12 @@ const moveIndicator = (index: number) => {
                 setActiveIndex(index);
                 moveIndicator(index);
                 if (index === 0) {
-                  router.push('/'); // ✅ Redireciona para index.js
+                  router.push('/'); // Redireciona para index.js
+                }else if (index == 1){
+                  router.push('/historico');
+                }
+                else if (index == 2){
+                  router.push('/login');
                 }
               }}
             >

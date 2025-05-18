@@ -89,7 +89,7 @@ export default function CotacoesScreen() {
         />
       )}
 
-      <Text style={styles.separador}>Resultados</Text>
+      
       
       <FlatList
                 data={cotacoes}
@@ -134,12 +134,5 @@ overlayMap: {
   borderColor: '#D9D9D9',
   //zIndex: 10,
 },
-separador: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginVertical: 12,
-    textAlign: 'center',
-    color: '#333',
-    
-  },
+
 });
