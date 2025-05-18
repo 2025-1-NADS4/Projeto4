@@ -1,5 +1,5 @@
 ﻿using Fasor.Domain.Aggregates;
-using Fasor.Infrastructure.Aggregates.Data;
+using Fasor.Infrastructure.Data;
 using Fasor.Infrastructure.Repositories.RideOptions.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,7 +7,7 @@ namespace Fasor.Infrastructure.Repositories.RideOptions
 {
     public class RideOptionRepository(AppDbContext _context) : IRideOptionRepository
     {
-        public async Task<RideOption> CreateRideOptionAsync(CompanyAppService companyService, DateTime timeRide,
+        public async Task<RideOption> CreateRideOptionAsync(AppService companyService, DateTime timeRide,
             RideQuote rideQuote, DateTime estimatedTime, string urlRedirect, decimal price)
         {
             var rideOption = new RideOption(companyService, timeRide,
@@ -20,7 +20,7 @@ namespace Fasor.Infrastructure.Repositories.RideOptions
         public async Task<IEnumerable<RideOption>> GetAllRideOptionsByQuoteAsync(Guid idQuote)
         {
             var rideOptions = await _context.RideOptions
-                .Include(r => r.CompanyService)
+                .Include(r => r.AppService)
                 .Include(r => r.RideQuote)
                 .Where(r => r.QuoteId == idQuote)
                 .ToListAsync();
@@ -31,7 +31,7 @@ namespace Fasor.Infrastructure.Repositories.RideOptions
         public async Task<RideOption> GetRideOptionByIdAsync(Guid id)
         {
             var rideOption = await _context.RideOptions
-                .Include(r => r.CompanyService)
+                .Include(r => r.AppService)
                 .Include(r => r.RideQuote)
                 .FirstOrDefaultAsync(r => r.Id == id);
 
