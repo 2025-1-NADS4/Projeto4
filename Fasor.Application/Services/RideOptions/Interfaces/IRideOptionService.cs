@@ -4,7 +4,7 @@ namespace Fasor.Application.Services.RideOptions.Interfaces
 {
     public interface IRideOptionService
     {
-        Task<RideOption> CreateRideOptionAsync(CompanyAppService companyService, DateTime timeRide,
+        Task<RideOption> CreateRideOptionAsync(AppService AppService, DateTime timeRide,
             RideQuote rideQuote, DateTime estimatedTime, string urlRedirect, decimal price);
 
         Task<IEnumerable<RideOption>> GetAllRideOptionsByQuoteAsync(Guid idQuote);

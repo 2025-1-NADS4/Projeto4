@@ -14,10 +14,10 @@ namespace Fasor.Application.Services.RideOptions
             var rideOption = await _RideOptionRepository.GetRideOptionByIdAsync(id);
             return rideOption;
         }
-        public async Task<RideOption> CreateRideOptionAsync(CompanyAppService companyService, DateTime timeRide,
+        public async Task<RideOption> CreateRideOptionAsync(AppService appService, DateTime timeRide,
             RideQuote rideQuote, DateTime estimatedTime, string urlRedirect, decimal price)
         {
-            var rideOption = await _RideOptionRepository.CreateRideOptionAsync(companyService, timeRide, rideQuote,
+            var rideOption = await _RideOptionRepository.CreateRideOptionAsync(appService, timeRide, rideQuote,
                 estimatedTime, urlRedirect, price);
             return rideOption;
         }
