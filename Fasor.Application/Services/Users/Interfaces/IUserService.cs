@@ -1,5 +1,6 @@
 ﻿using ErrorOr;
 using Fasor.Domain.Aggregates;
+using Fasor.Infrastructure.Repositories.Users.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,9 @@ namespace Fasor.Application.Services.Users.Interfaces
     {
         Task<ErrorOr<User>> GetUserByIdAsync(Guid id);
         Task<IEnumerable<User>> GetAllUsersAsync();
-        Task<User> CreateUser(string name, string surname, string cpf, string email, DateTime dateBirth, IEnumerable<Company>? preferences);
-        
+        Task<ErrorOr<User>> CreateUser(string name, string surname, string cpf, string email, DateTime dateBirth);
+        Task<ErrorOr<bool>> UpdateUserAsync(Guid id, UpdateUserDto dto);
+        Task<ErrorOr<bool>> DeleteUserAsync(Guid id);
+
     }
 }

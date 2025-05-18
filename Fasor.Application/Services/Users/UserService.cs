@@ -2,6 +2,10 @@
 using Fasor.Application.Services.Users.Interfaces;
 using Fasor.Domain.Aggregates;
 using Fasor.Infrastructure.Repositories.Users.Interfaces;
+using Fasor.Infrastructure.Repositories.Users.Dtos;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Fasor.Application.Services.Users
 {
@@ -12,22 +16,35 @@ namespace Fasor.Application.Services.Users
             var result = await userRepository.GetByIdAsync(id);
             if (result.IsError) return result.Errors;
 
-            var user = result.Value;
-
-            return user;
+            return result.Value;
         }
 
         public async Task<IEnumerable<User>> GetAllUsersAsync()
         {
-            var users = await userRepository.GetAllAsync();
-            return users;
+            return await userRepository.GetAllAsync();
         }
 
-        public async Task<User> CreateUser(string name, string surname, string cpf, string email, DateTime dateBirth, IEnumerable<Company>? preferences)
+        public async Task<ErrorOr<User>> CreateUser(string name, string surname, string cpf, string email, DateTime dateBirth)
         {
-            var result = await userRepository.CreateUser(name, surname, cpf, email, dateBirth, preferences);
+
+            var result = await userRepository.CreateUser(name, surname, email, cpf, dateBirth);
+
+            if (result == null)
+                return Error.Failure("Erro ao criar usuário.");
 
             return result;
+        }
+
+        public async Task<ErrorOr<bool>> UpdateUserAsync(Guid id, UpdateUserDto dto)
+        {
+            var updateResult = await userRepository.UpdateUserAsync(id, dto);
+            return updateResult;
+        }
+
+        public async Task<ErrorOr<bool>> DeleteUserAsync(Guid id)
+        {
+            var deleteResult = await userRepository.DeleteUserAsync(id);
+            return deleteResult;
         }
     }
 }
