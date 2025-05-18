@@ -1,20 +1,23 @@
 ﻿using Fasor.Domain.Aggregates;
+using System.ComponentModel.DataAnnotations;
 
 namespace Fasor.Application.Services.Companies.Dtos
 {
     public class CreateCompanyDto
     {
+        [Required]
         public string TradeName { get; set; }
+        [Required]
         public string Cnpj { get; set; }
-        public List<CompanyAppService>? CompanyAppService { get; set; }
+        public List<Guid> CompanyRideIds { get; set; }
 
         public static explicit operator CreateCompanyDto(Company domain)
         {
             return new CreateCompanyDto
             {
-                TradeName = domain.TradeName,
+                TradeName = domain.NameService,
                 Cnpj = domain.Cnpj,
-                CompanyAppService = domain.CompanyAppServices
+                CompanyRideIds = domain.CompanyCompanyRides?.Select(x => x.CompanyRideId).ToList() ?? new()
             };
         }
     }

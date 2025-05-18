@@ -2,6 +2,7 @@
 using Fasor.Application.Services.Companies.Dtos;
 using Fasor.Application.Services.Companies.Interfaces;
 using Fasor.Domain.Aggregates;
+using Fasor.Infrastructure.Repositories.Companies;
 using Fasor.Infrastructure.Repositories.Companies.Interfaces;
 using Fasor.Infrastructure.Repositories.CompanyServices.Interfaces;
 
@@ -9,7 +10,7 @@ namespace Fasor.Application.Services.Companies
 {
     public class CompanyService(
         ICompanyRepository _CompanyRepository,
-        ICompanyAppServicesRepository _CompanyAppServicesRepository) : ICompanyService
+        IAppServicesRepository _CompanyAppServicesRepository) : ICompanyService
     {
         public async Task<ErrorOr<Company>> CreateCompanyAsync(CreateCompanyDto dto)
         {
@@ -19,14 +20,15 @@ namespace Fasor.Application.Services.Companies
 
             var company = result.Value;
 
-            if (dto.CompanyAppService is not null && dto.CompanyAppService.Any())
+            foreach (var rideId in dto.CompanyRideIds)
             {
-                foreach (var item in dto.CompanyAppService)
+                var pivot = new CompanyCompanyRide
                 {
-                    var serviceResult = CompanyAppService.Create(company.Id, item.NameService);
-                    if (serviceResult.IsError) return serviceResult.Errors;
-                    await _CompanyAppServicesRepository.CreateCompanyAppServiceAsync(company.Id, item.NameService);
-                }
+                    CompanyId = company.Id,
+                    CompanyRideId = rideId
+                };
+
+                await _CompanyRepository.AddCompanyRideToCompanyAsync(pivot);
             }
 
             return company;
@@ -62,7 +64,7 @@ namespace Fasor.Application.Services.Companies
 
             var company = result.Value;
 
-            company.UpdateDetails(company.TradeName, company.Cnpj);
+            company.UpdateDetails(company.NameService, company.Cnpj);
 
             await _CompanyRepository.UpdateCompanyAsync(company);
 
