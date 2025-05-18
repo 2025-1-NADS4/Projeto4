@@ -1,6 +1,6 @@
 import { useRouter } from 'expo-router';
 import React, { useState, useEffect, useRef } from 'react';
-import { View, StyleSheet, SafeAreaView, Alert } from 'react-native';
+import { View, StyleSheet, SafeAreaView, Alert, Text  } from 'react-native';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import { FlatList, ActivityIndicator } from 'react-native';
 import * as Location from 'expo-location';
@@ -50,6 +50,29 @@ export default function CotacoesScreen() {
         descricao: '*Esse valor é uma estimativa, valores reais podem não corresponder',
         preco: 'R$ 89,00',
       },
+        {
+        id: '2',
+        logo: require('../assets/logo_uber.png'),
+        titulo: 'UberX',
+        descricao: '*Esse valor é uma estimativa, valores reais podem não corresponder',
+        preco: 'R$ 89,00',
+      },
+            {
+        id: '2',
+        logo: require('../assets/logo_uber.png'),
+        titulo: 'UberX',
+        descricao: '*Esse valor é uma estimativa, valores reais podem não corresponder',
+        preco: 'R$ 89,00',
+      },
+            {
+        id: '2',
+        logo: require('../assets/logo_uber.png'),
+        titulo: 'UberX',
+        descricao: '*Esse valor é uma estimativa, valores reais podem não corresponder',
+        preco: 'R$ 89,00',
+      },
+
+      
      
     ];
 
@@ -88,8 +111,8 @@ export default function CotacoesScreen() {
           showsCompass
         />
       )}
-
-      
+          {/* <Text style={styles.resultadosTitle}>Resultados</Text> */}
+        
       
       <FlatList
                 data={cotacoes}
@@ -107,8 +130,10 @@ export default function CotacoesScreen() {
                   paddingBottom: 100,
                   paddingHorizontal: 16,
                  }} // Espaço para o footer
-              />
 
+        
+               />
+            
 
         <TabBar />
       </SafeAreaView>
@@ -132,7 +157,16 @@ overlayMap: {
   borderRadius: 12,
   borderWidth: 2,
   borderColor: '#D9D9D9',
-  //zIndex: 10,
+  zIndex: 1,
 },
+flatListContent: {
+    paddingTop: 200, // altura do mapa
+    paddingBottom: 100, // altura do footer
+    paddingHorizontal: 16,
+  },
+
+  
+ 
+
 
 });
