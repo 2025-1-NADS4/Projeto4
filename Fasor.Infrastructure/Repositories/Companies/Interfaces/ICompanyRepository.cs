@@ -8,6 +8,7 @@ namespace Fasor.Infrastructure.Repositories.Companies.Interfaces
     {
         Task <ErrorOr<Company?>> GetCompanyByIdAsync(Guid id);
         Task <ErrorOr<Company>> CreateCompanyAsync(string tradeName, string cnpj);
+        Task AddCompanyRideToCompanyAsync(CompanyCompanyRide companyRide);
         Task<IEnumerable<Company>> GetAllCompaniesAsync();
         Task <ErrorOr<bool>> DeleteCompanyAsync(Guid id);
         Task <ErrorOr<Company>> UpdateCompanyAsync(Company company);

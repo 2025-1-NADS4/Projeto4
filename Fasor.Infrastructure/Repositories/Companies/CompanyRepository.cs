@@ -1,7 +1,7 @@
 ﻿using ErrorOr;
 using Fasor.Domain.Aggregates;
 using Fasor.Domain.Shared.Errors;
-using Fasor.Infrastructure.Aggregates.Data;
+using Fasor.Infrastructure.Data;
 using Fasor.Infrastructure.Repositories.Companies.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,7 +12,7 @@ namespace Fasor.Infrastructure.Repositories.Companies
         public async Task<ErrorOr<Company?>> GetCompanyByIdAsync(Guid id)
         {
             var company = await _context.Companies
-                .Include(c => c.CompanyAppServices)
+                .Include(c => c.CompanyCompanyRides)
                 .FirstOrDefaultAsync(c => c.Id == id);
 
             if (company == null) return CompanyErrors.CompanyNotFound;
@@ -33,10 +33,16 @@ namespace Fasor.Infrastructure.Repositories.Companies
             return company;
         }
 
+        public async Task AddCompanyRideToCompanyAsync(CompanyCompanyRide companyRide)
+        {
+            await _context.Set<CompanyCompanyRide>().AddAsync(companyRide);
+            await _context.SaveChangesAsync();
+        }
+
         public async Task<IEnumerable<Company>> GetAllCompaniesAsync()
         {
             return await _context.Companies
-                .Include(c => c.CompanyAppServices)
+                .Include(c => c.CompanyCompanyRides)
                 .ToListAsync();
         }
 
