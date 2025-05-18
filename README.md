@@ -11,22 +11,17 @@
 
 ## Integrantes: <a href="https://www.linkedin.com/in/giovanne-braga-0a4288280/">Giovanne Braga</a>, <a href="https://www.linkedin.com/in/isaac-fs-santos/">Isaac Santos</a>, <a href="https://www.linkedin.com/in/caroline-gomes-446882230/">Caroline Gomes</a>, <a href="https://www.linkedin.com/in/icaro-dellalo/">Icaro Luis Dellalo</a>
 
-## Professores Orientadores: <a href="https://www.linkedin.com/in/victorbarq/">Dr. Victor Von Doom</a>, <a href="https://www.linkedin.com/in/victorbarq/">Me. Saitama</a>, <a href="https://www.linkedin.com/in/victorbarq/">Dr. Strange</a>, <a href="https://www.linkedin.com/in/victorbarq/">Me. Yoda</a>, <a href="https://www.linkedin.com/in/victorbarq/">Dr. Gero</a>
+## Professores Orientadores: <a href="https://www.linkedin.com/in/ronaldo-araujo-pinto-3542811a/">Ronaldo Araújo</a>, <a href="https://www.linkedin.com/in/eduardo-savino-gomes-77833a10/">Eduardo Savino</a>, <a href="https://www.linkedin.com/in/lucymari/?originalSubdomain=br">Lucy Mari</a>, <a href="https://www.linkedin.com/in/edsonbarbero/">Edson Barbero</a>, <a href="https://www.linkedin.com/in/aimarlopes/">Aimar Lopes</a>
 
 ## Descrição
 
 <p align="center">
-<img src="https://pix4free.org/assets/library/2021-01-20/originals/game.jpg" alt="NOME DO JOGO" border="0">
-  Game by <a href="http://www.nyphotographic.com/">Nick Youngson</a> <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> <a href="http://pix4free.org/">Pix4free</a>
+<img src="https://github.com/2025-1-NADS4/Projeto4/blob/main/imagens/cover.png" alt="CAPA FASOR" border="0">
 </p>
 
-
-De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
-<br><br>
-Meu projeto ajuda estudantes FECAP a configurarem seus githubs.
-<br><br>
-May the force be with you!
-<br><br>
+FASOR - Fare Advisor é um aplicativo que auxilia usuários de transporte por aplicativo (como Uber e 99) a comparar em tempo real as tarifas praticadas por diferentes serviços.
+Para isso, foi criado e treinado um modelo de machine learning com base em uma base de dados real fornecida, capaz de prever os valores médios das tarifas em determinadas condições. Com essa previsão, o app exibe ao usuário as opções conforme local de partida, destino, horário e demanda.<br>
+Esse desafio foi proposto pela FECAP como entrega do Projeto Integrador de Startup Digital
 
 ## 🛠 Estrutura de pastas
 
@@ -63,43 +58,39 @@ Há também 4 pastas que seguem da seguinte forma:
 
 <b>Android:</b>
 
-Faça o Download do JOGO.apk no seu celular.
+Faça o Download do .apk no seu celular.
 Execute o APK e siga as instruções de seu telefone.
 
-```sh
-Coloque código do prompt de comnando se for necessário
-```
-
-<b>Windows:</b>
-
-Não há instalação! Apenas executável!
-Encontre o JOGO.exe na pasta executáveis e execute-o como qualquer outro programa.
-
-```sh
-Coloque código do prompt de comnando se for necessário
-```
-
-<b>HTML:</b>
-
-Não há instalação!
-Encontre o index.html na pasta executáveis e execute-o como uma página WEB (através de algum browser).
 
 ## 💻 Configuração para Desenvolvimento
 
-Descreva como instalar todas as dependências para desenvolvimento e como rodar um test-suite automatizado de algum tipo. Se necessário, faça isso para múltiplas plataformas.
+Para rodar a aplicação Mobile apenas clone o repositório de Front-end e rode o comando abaixo descrito em **Mobile**, para rodar a API que traz a cotação, clone o repositório pertinente a IA no PyCharm (recomendado) e rode os comandos descritos em IA;   
 
 Para abrir este projeto você necessita das seguintes ferramentas:
 
--<a href="https://godotengine.org/download">GODOT</a>
+-<a href="https://www.jetbrains.com/pt-br/pycharm/download/?section=windows">PyCharm</a><br>
+-<a href="https://visualstudio.microsoft.com/pt-br/downloads/">Visual Studio</a><br>
+-<a href="https://code.visualstudio.com/download">Visual Studio Code</a>
+
+Mobile:
 
 ```sh
-make install
-npm test
-Coloque código do prompt de comnando se for necessário
+npm install
+npm start
 ```
 
+IA:
+
+```sh
+pip install -r requirements.txt
+
+uvicorn app.main:app --reload
+
+```
+Acesse o IP indicado incluindo o /docs
+
 ## 📋 Licença/License
-Utilize o link <https://chooser-beta.creativecommons.org/> para fazer uma licença CC BY 4.0.
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/2025-1-NADS4/Projeto4/">FASOR</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" <a href="https://www.linkedin.com/in/giovanne-braga-0a4288280/">Giovanne Braga</a>, <a href="https://www.linkedin.com/in/isaac-fs-santos/">Isaac Santos</a>, <a href="https://www.linkedin.com/in/icaro-dellalo/">Icaro Dellalo</a>, <a href="https://www.linkedin.com/in/caroline-gomes-446882230/">Caroline Gomes</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
 
 ## 🎓 Referências
 
