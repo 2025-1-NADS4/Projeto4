@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { View, TouchableOpacity, Animated, Dimensions, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
+import { usePathname } from 'expo-router';
+
 
 const { width: screenWidth } = Dimensions.get('window');
-const tabIcons: Array<'home-outline' | 'person-outline' | 'settings-outline'> = ['home-outline', 'person-outline', 'settings-outline'];
-const tabIconsActive: Array<'home' | 'person' | 'settings'> = ['home', 'person', 'settings'];
+const tabIcons: Array<'home-outline' | 'person-outline' | 'log-out-outline'> = ['home-outline', 'person-outline', 'log-out-outline'];
+const tabIconsActive: Array<'home' | 'person' | 'log-out'> = ['home', 'person', 'log-out'];
 const tabCount = tabIcons.length;
 const tabWidth = screenWidth / tabCount;
 const circleSize = 70;
@@ -16,6 +18,8 @@ const Footer = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const translateX = React.useRef(new Animated.Value(0)).current;
   const router = useRouter();
+  const pathname = usePathname();
+
 
 const moveIndicator = (index: number) => {
   Animated.spring(translateX, {
@@ -26,6 +30,11 @@ const moveIndicator = (index: number) => {
   }).start();
 };
 
+ React.useEffect(() => {
+    if (pathname === '/') setActiveIndex(0);
+    else if (pathname === '/historico') setActiveIndex(1);
+    else if (pathname === '/login') setActiveIndex(2);
+  }, [pathname]);
 
 
   React.useEffect(() => {
@@ -52,16 +61,15 @@ const moveIndicator = (index: number) => {
               key={index}
               style={styles.tabButton}
               onPress={() => {
-                setActiveIndex(index);
                 moveIndicator(index);
                 if (index === 0) {
-                  router.push('/'); // Redireciona para index.js
-                }else if (index == 1){
+                  router.push('/');
+                } else if (index === 1) {
                   router.push('/historico');
-                }
-                else if (index == 2){
+                } else if (index === 2) {
                   router.push('/login');
                 }
+            
               }}
             >
               <Ionicons
