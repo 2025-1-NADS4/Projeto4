@@ -17,7 +17,7 @@ namespace Fasor.Domain.Aggregates
 
 
         public User() { }
-        public User(string name, string surname, string cpf, string email, DateTime dateBirth)
+        public User(string name, string surname, string cpf, string email, DateTime dateBirth, Guid companyId)
         {
 
             Id = Guid.NewGuid();
@@ -25,7 +25,8 @@ namespace Fasor.Domain.Aggregates
             Surname = surname;
             Cpf = cpf;
             Email = email;
-            DateBirth = dateBirth;            
+            DateBirth = dateBirth;
+            CompanyId = companyId;
         }
     }
 }

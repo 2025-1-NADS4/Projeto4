@@ -37,7 +37,7 @@ namespace Fasor.Domain.Aggregates
             if (errors.Any())
                 return errors;
 
-            company.IsActive = false;
+            company.IsActive = true;
 
             return company;
         }

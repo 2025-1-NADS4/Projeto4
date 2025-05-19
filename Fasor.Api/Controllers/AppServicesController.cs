@@ -92,7 +92,6 @@ public class AppServicesController : ControllerBase
     }
 }
 
-// DTO para criação
 public class CreateAppServiceDto
 {
     public Guid IdCompanyRide { get; set; }

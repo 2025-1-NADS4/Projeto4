@@ -6,7 +6,7 @@ namespace Fasor.Application.Services.Companies.Dtos
     public class CreateCompanyDto
     {
         [Required]
-        public string TradeName { get; set; }
+        public string NameService{ get; set; }
         [Required]
         public string Cnpj { get; set; }
         public List<Guid> CompanyRideIds { get; set; }
@@ -15,7 +15,7 @@ namespace Fasor.Application.Services.Companies.Dtos
         {
             return new CreateCompanyDto
             {
-                TradeName = domain.NameService,
+                NameService = domain.NameService,
                 Cnpj = domain.Cnpj,
                 CompanyRideIds = domain.CompanyCompanyRides?.Select(x => x.CompanyRideId).ToList() ?? new()
             };

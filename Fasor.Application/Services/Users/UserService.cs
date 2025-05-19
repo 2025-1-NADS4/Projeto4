@@ -19,15 +19,16 @@ namespace Fasor.Application.Services.Users
             return result.Value;
         }
 
-        public async Task<IEnumerable<User>> GetAllUsersAsync()
+
+        public async Task<IEnumerable<dynamic>> GetAllUsersAsync()
         {
             return await userRepository.GetAllAsync();
         }
 
-        public async Task<ErrorOr<User>> CreateUser(string name, string surname, string cpf, string email, DateTime dateBirth)
+        public async Task<ErrorOr<User>> CreateUser(string name, string surname, string cpf, string email, DateTime dateBirth, Guid companyId)
         {
 
-            var result = await userRepository.CreateUser(name, surname, email, cpf, dateBirth);
+            var result = await userRepository.CreateUser(name, surname, email, cpf, dateBirth, companyId);
 
             if (result == null)
                 return Error.Failure("Erro ao criar usuário.");

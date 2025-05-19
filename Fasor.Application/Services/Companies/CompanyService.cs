@@ -14,7 +14,7 @@ namespace Fasor.Application.Services.Companies
     {
         public async Task<ErrorOr<Company>> CreateCompanyAsync(CreateCompanyDto dto)
         {
-            var result = await _CompanyRepository.CreateCompanyAsync(dto.TradeName, dto.Cnpj);
+            var result = await _CompanyRepository.CreateCompanyAsync(dto.NameService, dto.Cnpj);
 
             if (result.IsError) return result;
 

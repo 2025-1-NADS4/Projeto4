@@ -15,15 +15,29 @@ namespace Fasor.Infrastructure.Repositories.Users
                 .FirstOrDefaultAsync(u => u.Id == id);
         }
 
-        public async Task<IEnumerable<User>> GetAllAsync()
+        public async Task<IEnumerable<dynamic>> GetAllAsync()
         {
             return await _context.Users
+                .Select(u => new
+                {
+                    u.Id,
+                    u.Name,
+                    u.Surname,
+                    u.Cpf,
+                    u.Email,
+                    u.DateBirth,
+                    u.CompanyId,
+                    CompanyName = u.Company.NameService,
+                    u.RideQuotes
+                })
+                .AsNoTracking()
                 .ToListAsync();
         }
 
-        public async Task<User> CreateUser(string name, string surname, string email, string cpf, DateTime dateBirth)
+
+        public async Task<User> CreateUser(string name, string surname, string email, string cpf, DateTime dateBirth, Guid companyId)
         {
-            var user = new User(name, surname, cpf, email, dateBirth);
+            var user = new User(name, surname, cpf, email, dateBirth, companyId);
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
             return user;
