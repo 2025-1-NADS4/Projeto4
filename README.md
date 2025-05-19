@@ -28,8 +28,11 @@ Esse desafio foi proposto pela FECAP como entrega do Projeto Integrador de Start
 -Raiz<br>
 |<br>
 |-->documentos<br>
-  &emsp;|-->antigos<br>
-  &emsp;|Documentação.docx<br>
+  &emsp;|-->Entrega 1<br>
+  &emsp;|-->Entrega 2<br>
+  &emsp;|-->Entrega 3<br>
+  &emsp;|-->Outros documentos<br>
+  
 |-->executáveis<br>
   &emsp;|-->windows<br>
   &emsp;|-->android<br>
