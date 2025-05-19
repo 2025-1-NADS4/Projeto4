@@ -4,15 +4,14 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { responsiveHeight } from 'react-native-responsive-dimensions';
 
 
-export default function InputCentral() {
+export default function InputCentral({ originInputRef, destinationInputRef }) {
   const [originInput, setOriginInput] = useState('');
   const [destinationInput, setDestinationInput] = useState('');
   const [originSuggestions, setOriginSuggestions] = useState([]);
   const [destinationSuggestions, setDestinationSuggestions] = useState([]);
   const GOOGLE_API_KEY = 'AIzaSyDtauS1lmtuMouZS5XFGlIlDEFZ64wWML0';
 
-  const originInputRef = useRef(null);
-  const destinationInputRef = useRef(null);
+
 
   const fetchPlaces = async (inputText, isOrigin) => {
     if (!inputText) {

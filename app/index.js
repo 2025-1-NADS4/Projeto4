@@ -24,6 +24,9 @@ export default function HomeScreen() {
   const mapRef = useRef(null);
   const router = useRouter();
 
+  const originInputRef = useRef(null);
+  const destinationInputRef = useRef(null);
+
   useEffect(() => {
     const getLocation = async () => {
       const { status } = await Location.requestForegroundPermissionsAsync();
@@ -56,9 +59,12 @@ export default function HomeScreen() {
     if (location) {
       router.push({
         pathname: '/cotacoes',
-        query: {
+        params: {
           origemLat: location.coords.latitude,
           origemLng: location.coords.longitude,
+          horaSelecionada: dataHora.toISOString(),
+          destinationAddress: destinationInputRef.current,
+          originAddress: originInputRef.current
         },
       });
     } else {
@@ -74,6 +80,8 @@ export default function HomeScreen() {
           origemLat: location.coords.latitude,
           origemLng: location.coords.longitude,
           horaSelecionada: dataHora.toISOString(),
+          destinationAddress: destinationInputRef.current,
+          originAddress: originInputRef.current
         },
       });
     } else {
@@ -89,7 +97,7 @@ export default function HomeScreen() {
     <SafeAreaView style={styles.container}>
       <View style={{ width: '100%', position: 'relative' }}>
         <HeaderIndex />
-        <InputCentral />
+        <InputCentral originInputRef={originInputRef} destinationInputRef={destinationInputRef} />
       </View>
 
       <View style={styles.buttonRow}>

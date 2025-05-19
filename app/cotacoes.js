@@ -1,6 +1,6 @@
-import { useRouter } from 'expo-router';
+import { useRouter, useLocalSearchParams } from 'expo-router';
 import React, { useState, useEffect, useRef } from 'react';
-import { View, StyleSheet, SafeAreaView, Alert, Text  } from 'react-native';
+import { View, StyleSheet, SafeAreaView, Alert, Text } from 'react-native';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import { FlatList, ActivityIndicator } from 'react-native';
 import * as Location from 'expo-location';
@@ -15,6 +15,8 @@ export default function CotacoesScreen() {
   const router = useRouter();
   const [cotacoes, setCotacoes] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const params = useLocalSearchParams();
 
   useEffect(() => {
     (async () => {
@@ -35,51 +37,29 @@ export default function CotacoesScreen() {
   }, []);
 
   useEffect(() => {
-    const mockData = [
-      {
-        id: '1',
-        logo: require('../assets/logo_99.png'), 
-        titulo: '99Pop',
-        descricao: '*Esse valor é uma estimativa, valores reais podem não corresponder',
-        preco: 'R$ 149,90',
-      },
-      {
-        id: '2',
-        logo: require('../assets/logo_uber.png'),
-        titulo: 'UberX',
-        descricao: '*Esse valor é uma estimativa, valores reais podem não corresponder',
-        preco: 'R$ 89,00',
-      },
-        {
-        id: '2',
-        logo: require('../assets/logo_uber.png'),
-        titulo: 'UberX',
-        descricao: '*Esse valor é uma estimativa, valores reais podem não corresponder',
-        preco: 'R$ 89,00',
-      },
-            {
-        id: '2',
-        logo: require('../assets/logo_uber.png'),
-        titulo: 'UberX',
-        descricao: '*Esse valor é uma estimativa, valores reais podem não corresponder',
-        preco: 'R$ 89,00',
-      },
-            {
-        id: '2',
-        logo: require('../assets/logo_uber.png'),
-        titulo: 'UberX',
-        descricao: '*Esse valor é uma estimativa, valores reais podem não corresponder',
-        preco: 'R$ 89,00',
-      },
+    const date = new Date(params.horaSelecionada);
+    const weekDay = date.getDay(); 
+    const tipodia = weekDay === 0 || weekDay === 6 ? 'fim_de_semana' : 'dia_util';
 
-      
-     
-    ];
-
-    setTimeout(() => {
-      setCotacoes(mockData);
-      setLoading(false);
-    }, 1500); // Simula carregamento de 1,5s
+    const ano = date.getFullYear();
+    const mes = date.getMonth();
+    const hora = date.getHours();
+    fetch({
+      url: "https://localhost:44394/api/RideQuotes", method: "POST", body: {
+        OriginAddress: params.OriginAddress,
+        DestinationAddress: params.destinationAddress,
+        LatitudeOrigin: params.origemLat,
+        LongitudeOrigin: params.origemLng,
+        // LatitudeDestination: '',
+        // LongitudeDestination: '',
+        tipodia,
+        tipohorario: 'livre', //mock
+        ano,
+        mes,
+        hora,
+        UserId: 1, // mock
+      }
+    })
   }, []);
 
   if (loading) {
@@ -97,50 +77,50 @@ export default function CotacoesScreen() {
           <HeaderIndex />
         </View>
 
-       {region && (
-        <MapView
-          ref={mapRef}
-          provider={PROVIDER_GOOGLE}
-          style={styles.overlayMap}
-          region={region}
-          showsUserLocation={true}
-          zoomEnabled
-          scrollEnabled
-          rotateEnabled
-          pitchEnabled
-          showsCompass
-        />
-      )}
-          {/* <Text style={styles.resultadosTitle}>Resultados</Text> */}
-        
-      
-      <FlatList
-                data={cotacoes}
-                keyExtractor={(item) => item.id}
-                renderItem={({ item }) => (
-                  <CotacaoCard
-                    logo={item.logo}
-                    titulo={item.titulo}
-                    descricao={item.descricao}
-                    preco={item.preco}
-                  />
-                )}
-                contentContainerStyle={{ 
-                  paddingTop: 200, // valor maior que a altura do mapa
-                  paddingBottom: 100,
-                  paddingHorizontal: 16,
-                 }} // Espaço para o footer
+        {region && (
+          <MapView
+            ref={mapRef}
+            provider={PROVIDER_GOOGLE}
+            style={styles.overlayMap}
+            region={region}
+            showsUserLocation={true}
+            zoomEnabled
+            scrollEnabled
+            rotateEnabled
+            pitchEnabled
+            showsCompass
+          />
+        )}
+        {/* <Text style={styles.resultadosTitle}>Resultados</Text> */}
 
-        
-               />
-            
+
+        <FlatList
+          data={cotacoes}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => (
+            <CotacaoCard
+              logo={item.logo}
+              titulo={item.titulo}
+              descricao={item.descricao}
+              preco={item.preco}
+            />
+          )}
+          contentContainerStyle={{
+            paddingTop: 200, // valor maior que a altura do mapa
+            paddingBottom: 100,
+            paddingHorizontal: 16,
+          }} // Espaço para o footer
+
+
+        />
+
 
         <TabBar />
       </SafeAreaView>
-       
+
 
     </View>
-    
+
   );
 }
 
@@ -148,25 +128,25 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-overlayMap: {
-  position: 'absolute',
-  top: 20, 
-  alignSelf: 'center',
-  width: '90%',
-  height: '35%',
-  borderRadius: 12,
-  borderWidth: 2,
-  borderColor: '#D9D9D9',
-  zIndex: 1,
-},
-flatListContent: {
+  overlayMap: {
+    position: 'absolute',
+    top: 20,
+    alignSelf: 'center',
+    width: '90%',
+    height: '35%',
+    borderRadius: 12,
+    borderWidth: 2,
+    borderColor: '#D9D9D9',
+    zIndex: 1,
+  },
+  flatListContent: {
     paddingTop: 200, // altura do mapa
     paddingBottom: 100, // altura do footer
     paddingHorizontal: 16,
   },
 
-  
- 
+
+
 
 
 });
