@@ -54,13 +54,6 @@ Há também 4 pastas que seguem da seguinte forma:
 
 <b>src</b>: Pasta que contém o código fonte.
 
-## 🛠 Instalação
-
-<b>Android:</b>
-
-Faça o Download do .apk no seu celular.
-Execute o APK e siga as instruções de seu telefone.
-
 
 ## 💻 Configuração para Desenvolvimento
 
@@ -73,6 +66,9 @@ Para abrir este projeto você necessita das seguintes ferramentas:
 -<a href="https://code.visualstudio.com/download">Visual Studio Code</a>
 
 Mobile:
+
+Instale o Expo Go na PlayStore
+Escaneie o QR Code após o "npm start"
 
 ```sh
 npm install
