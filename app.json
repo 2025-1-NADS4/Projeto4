@@ -18,16 +18,23 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/splash_fasor.png",
+        "foregroundImage": "./assets/logos_android.png",
         "backgroundColor": "#DD0483"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.fasor"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
       "expo-router"
-    ]
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "55696617-186c-4358-bad8-37ff9e0f1aa2"
+      }
+    }
   }
 }
