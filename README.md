@@ -34,9 +34,7 @@ Esse desafio foi proposto pela FECAP como entrega do Projeto Integrador de Start
   &emsp;|-->Outros documentos<br>
   
 |-->executáveis<br>
-  &emsp;|-->windows<br>
-  &emsp;|-->android<br>
-  &emsp;|-->HTML<br>
+
 |-->imagens<br>
 |-->src<br>
   &emsp;|-->Backend<br>
