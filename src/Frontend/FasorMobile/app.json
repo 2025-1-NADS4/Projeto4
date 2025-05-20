@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "fasor-js",
+    "slug": "fasor-js",
+    "scheme": "fasor-js",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash_fasor.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#DD0483"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/logos_android.png",
+        "backgroundColor": "#DD0483"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.fasor"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "55696617-186c-4358-bad8-37ff9e0f1aa2"
+      }
+    }
+  }
+}
