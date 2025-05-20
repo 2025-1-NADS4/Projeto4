@@ -32,13 +32,13 @@ Esse desafio foi proposto pela FECAP como entrega do Projeto Integrador de Start
   &emsp;|-->Entrega 2<br>
   &emsp;|-->Entrega 3<br>
   &emsp;|-->Outros documentos<br>
-  
-|-->executáveis<br>
 
 |-->imagens<br>
 |-->src<br>
   &emsp;|-->Backend<br>
   &emsp;|-->Frontend<br>
+  &emsp;&emsp;|-->FasorAdmin<br>
+  &emsp;&emsp;|-->FasorMobile<br>
 |readme.md<br>
 
 A pasta raiz contem dois arquivos que devem ser alterados:
