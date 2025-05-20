@@ -32,7 +32,6 @@ Esse desafio foi proposto pela FECAP como entrega do Projeto Integrador de Start
   &emsp;|-->Entrega 2<br>
   &emsp;|-->Entrega 3<br>
   &emsp;|-->Outros documentos<br>
-
 |-->imagens<br>
 |-->src<br>
   &emsp;|-->Backend<br>
@@ -41,17 +40,12 @@ Esse desafio foi proposto pela FECAP como entrega do Projeto Integrador de Start
   &emsp;&emsp;|-->FasorMobile<br>
 |readme.md<br>
 
-A pasta raiz contem dois arquivos que devem ser alterados:
 
-<b>README.MD</b>: Arquivo que serve como guia e explicação geral sobre seu projeto. O mesmo que você está lendo agora.
+Legenda:
 
-Há também 4 pastas que seguem da seguinte forma:
+<b>documentos</b>: Toda a documentação e entregáveis.
 
-<b>documentos</b>: Toda a documentação estará nesta pasta.
-
-<b>executáveis</b>: Binários e executáveis do projeto devem estar nesta pasta.
-
-<b>imagens</b>: Imagens do sistema
+<b>imagens</b>: Imagens do sistema, logo etc.
 
 <b>src</b>: Pasta que contém o código fonte.
 
