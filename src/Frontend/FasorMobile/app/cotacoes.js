@@ -12,11 +12,13 @@ import CotacaoCard from '../components/cotacaoCard';
 export default function CotacoesScreen() {
   const [region, setRegion] = useState(null);
   const mapRef = useRef(null);
-  const router = useRouter();
+  // const router = useRouter();
   const [cotacoes, setCotacoes] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const params = useLocalSearchParams();
+
+  console.log(params);
 
   useEffect(() => {
     (async () => {
@@ -37,38 +39,45 @@ export default function CotacoesScreen() {
   }, []);
 
   useEffect(() => {
-    const date = new Date(params.horaSelecionada);
-    const weekDay = date.getDay(); 
-    const tipodia = weekDay === 0 || weekDay === 6 ? 'fim_de_semana' : 'dia_util';
+    (async () => {
+      const date = new Date(params.horaSelecionada);
+      const weekDay = date.getDay();
+      const tipodia = weekDay === 0 || weekDay === 6 ? 'fim_de_semana' : 'dia_util';
 
-    const ano = date.getFullYear();
-    const mes = date.getMonth();
-    const hora = date.getHours();
-    fetch({
-      url: "https://localhost:44394/api/RideQuotes", method: "POST", body: {
-        OriginAddress: params.OriginAddress,
-        DestinationAddress: params.destinationAddress,
-        LatitudeOrigin: params.origemLat,
-        LongitudeOrigin: params.origemLng,
-        // LatitudeDestination: '',
-        // LongitudeDestination: '',
-        tipodia,
-        tipohorario: 'livre', //mock
-        ano,
-        mes,
-        hora,
-        UserId: 1, // mock
+      const ano = date.getFullYear();
+      const mes = date.getMonth();
+      const hora = date.getHours();
+      const response = await fetch({
+        url: "https://localhost:44394/api/RideQuotes", method: "POST", body: {
+          OriginAddress: params.OriginAddress,
+          DestinationAddress: params.destinationAddress,
+          LatitudeOrigin: params.origemLat,
+          LongitudeOrigin: params.origemLng,
+          LatitudeDestination: params.destinationLat,
+          LongitudeDestination: params.destinationLng,
+          tipodia,
+          tipohorario: 'livre', //mock
+          ano,
+          mes,
+          hora,
+          UserId: 1, // mock
+        }
+      });
+
+      if (response.status === 200) {
+        const data = await response.json();
+        setCotacoes(data);
       }
-    })
+    })();
   }, []);
 
-  if (loading) {
-    return (
-      <View style={styles.loading}>
-        <ActivityIndicator size="large" color="#ED6FA9" />
-      </View>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <View style={styles.loading}>
+  //       <ActivityIndicator size="large" color="#ED6FA9" />
+  //     </View>
+  //   );
+  // }
 
   return (
     <View style={{ flex: 1 }}>
@@ -91,8 +100,8 @@ export default function CotacoesScreen() {
             showsCompass
           />
         )}
-        {/* <Text style={styles.resultadosTitle}>Resultados</Text> */}
 
+        <Text style={styles.resultadosTitle}>Resultados</Text>
 
         <FlatList
           data={cotacoes}
@@ -110,8 +119,6 @@ export default function CotacoesScreen() {
             paddingBottom: 100,
             paddingHorizontal: 16,
           }} // Espaço para o footer
-
-
         />
 
 
@@ -144,9 +151,4 @@ const styles = StyleSheet.create({
     paddingBottom: 100, // altura do footer
     paddingHorizontal: 16,
   },
-
-
-
-
-
 });

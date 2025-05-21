@@ -1,21 +1,32 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { View, StyleSheet, TouchableOpacity, TextInput, Text, FlatList } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { responsiveHeight } from 'react-native-responsive-dimensions';
+import { Image } from 'react-native';
+import DateTimePicker from '@react-native-community/datetimepicker';
+import ImgViajarAgora from '../assets/viajar-agora.png';
+import ImgViajarMaisTarde from '../assets/viajar-mais-tarde.png';
+import { useRouter } from 'expo-router';
 
 
-export default function InputCentral({ originInputRef, destinationInputRef }) {
+export default function InputCentral() {
   const [originInput, setOriginInput] = useState('');
   const [destinationInput, setDestinationInput] = useState('');
   const [originSuggestions, setOriginSuggestions] = useState([]);
   const [destinationSuggestions, setDestinationSuggestions] = useState([]);
   const GOOGLE_API_KEY = 'AIzaSyDtauS1lmtuMouZS5XFGlIlDEFZ64wWML0';
 
+  const [mostrarHorario, setMostrarHorario] = useState(false);
+  const [dataHora, setDataHora] = useState(new Date());
+
+  const router = useRouter();
+  const [originLocation, setOriginLocation] = useState();
+  const [destinationLocation, setDestinationLocation] = useState();
 
 
-  const fetchPlaces = async (inputText, isOrigin) => {
+  const fetchPlaces = async (inputText, setSuggestion) => {
     if (!inputText) {
-      isOrigin ? setOriginSuggestions([]) : setDestinationSuggestions([]);
+      setSuggestion([]);
       return;
     }
 
@@ -28,7 +39,7 @@ export default function InputCentral({ originInputRef, destinationInputRef }) {
       const data = await response.json();
 
       if (data.status === 'OK') {
-        isOrigin ? setOriginSuggestions(data.predictions) : setDestinationSuggestions(data.predictions);
+        setSuggestion(data.predictions);
       } else {
         console.warn('Erro na API:', data.status, data.error_message);
       }
@@ -43,17 +54,9 @@ export default function InputCentral({ originInputRef, destinationInputRef }) {
     setDestinationInput(origemTemp);
     setOriginSuggestions([]);
     setDestinationSuggestions([]);
-
-    if (originInputRef.current) {
-      originInputRef.current.blur();
-    }
-
-    if (destinationInputRef.current) {
-      destinationInputRef.current.blur();
-    }
   };
 
-  const handleSelectSuggestion = async (suggestion, isOrigin) => {
+  const handleSelectSuggestion = async (suggestion, setInput, setSuggestion, setLocation) => {
     const placeId = suggestion.place_id;
     const detailsUrl = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&key=${GOOGLE_API_KEY}`;
 
@@ -62,15 +65,9 @@ export default function InputCentral({ originInputRef, destinationInputRef }) {
       const data = await response.json();
 
       if (data.status === 'OK') {
-        const location = data.result.geometry.location;
-
-        if (isOrigin) {
-          setOriginInput(suggestion.description);
-          setOriginSuggestions([]);
-        } else {
-          setDestinationInput(suggestion.description);
-          setDestinationSuggestions([]);
-        }
+        setLocation(data.result.geometry.location);
+        setInput(suggestion.description);
+        setSuggestion([]);
       } else {
         console.warn('Erro ao buscar detalhes do lugar:', data.status, data.error_message);
       }
@@ -79,68 +76,124 @@ export default function InputCentral({ originInputRef, destinationInputRef }) {
     }
   };
 
+  const handleViajar = () => {
+    if (location) {
+      router.push({
+        pathname: '/cotacoes',
+        params: {
+          origemLat: originLocation?.lat,
+          origemLng: originLocation?.lng,
+          destinationLat: destinationLocation?.lat,
+          destinationLng: destinationLocation?.lng,
+          horaSelecionada: dataHora.toISOString(),
+          destinationAddress: destinationInput,
+          originAddress: originInput
+        },
+      });
+    } else {
+      alert('Localização não disponível');
+    }
+  };
+
   return (
-    <View style={styles.container}>
-      <TextInput
-        ref={originInputRef}
-        style={styles.inputLocal}
-        placeholder="MEU LOCAL DE PARTIDA"
-        placeholderTextColor="#888"
-        value={originInput}
-        onChangeText={(text) => {
-          setOriginInput(text);
-          fetchPlaces(text, true);
-        }}
-      />
-      {originInput.length > 0 && originSuggestions.length > 0 && (
-        <FlatList
-          data={originSuggestions}
-          keyExtractor={(item) => item.place_id}
-          style={[styles.suggestions, { top: responsiveHeight(18) }]}
-          renderItem={({ item }) => (
-            <TouchableOpacity onPress={() => handleSelectSuggestion(item, true)} style={styles.suggestionItem}>
-              <Text>{item.description}</Text>
-            </TouchableOpacity>
-          )}
+    <React.Fragment>
+      <View style={styles.container}>
+        <TextInput
+          style={styles.inputLocal}
+          placeholder="MEU LOCAL DE PARTIDA"
+          placeholderTextColor="#888"
+          value={originInput}
+          onChangeText={(text) => {
+            setOriginInput(text);
+            fetchPlaces(text, setOriginSuggestions);
+          }}
         />
-      )}
+        {originInput.length && originSuggestions.length && (
+          <FlatList
+            data={originSuggestions}
+            keyExtractor={(item) => item.place_id}
+            style={[styles.suggestions, { top: responsiveHeight(18) }]}
+            renderItem={({ item }) => (
+              <TouchableOpacity onPress={() => handleSelectSuggestion(item, setOriginInput, setOriginSuggestions, setOriginLocation)} style={styles.suggestionItem}>
+                <Text>{item?.description}</Text>
+              </TouchableOpacity>
+            )}
+          />
+        )}
 
-      <TouchableOpacity
-        style={styles.trocarLabelSombra}
-        accessibilityLabel="Trocar origem e destino"
-        accessibilityRole="button"
-        onPress={trocarInput}
-      >
-        <View style={styles.trocarLabel}>
-          <Icon name="arrow-up" color="black" />
-          <Icon name="arrow-down" color="black" />
-        </View>
-      </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.trocarLabelSombra}
+          accessibilityLabel="Trocar origem e destino"
+          accessibilityRole="button"
+          onPress={trocarInput}
+        >
+          <View style={styles.trocarLabel}>
+            <Icon name="arrow-up" color="black" />
+            <Icon name="arrow-down" color="black" />
+          </View>
+        </TouchableOpacity>
 
-      <TextInput
-        ref={destinationInputRef}
-        style={styles.inputDestino}
-        placeholder="MEU LOCAL DE DESTINO"
-        placeholderTextColor="#888"
-        value={destinationInput}
-        onChangeText={(text) => {
-          setDestinationInput(text);
-          fetchPlaces(text, false);
-        }}
-      />
-      {destinationInput.length > 0 && destinationSuggestions.length > 0 && (
-        <FlatList
-          data={destinationSuggestions}
-          keyExtractor={(item) => item.place_id}
-          style={[styles.suggestions, { top: responsiveHeight(18) }]}
-          renderItem={({ item }) => (
-            <TouchableOpacity onPress={() => handleSelectSuggestion(item, false)} style={styles.suggestionItem}>
-              <Text>{item.description}</Text>
-            </TouchableOpacity>
-          )}
+        <TextInput
+          style={styles.inputDestino}
+          placeholder="MEU LOCAL DE DESTINO"
+          placeholderTextColor="#888"
+          value={destinationInput}
+          onChangeText={(text) => {
+            setDestinationInput(text);
+            fetchPlaces(text, setDestinationSuggestions);
+          }}
         />
-      )}
-    </View>
+        {destinationInput.length && destinationSuggestions.length && (
+          <FlatList
+            data={destinationSuggestions}
+            keyExtractor={(item) => item.place_id}
+            style={[styles.suggestions, { top: responsiveHeight(18) }]}
+            renderItem={({ item }) => (
+              <TouchableOpacity onPress={() => handleSelectSuggestion(item, setDestinationInput, setDestinationSuggestions, setDestinationLocation)} style={styles.suggestionItem}>
+                <Text>{item?.description}</Text>
+              </TouchableOpacity>
+            )}
+          />
+        )}
+      </View>
+
+      {/* BUTTONS */}
+      <View style={styles.buttonRow}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={handleViajar}
+        >
+          <Image source={ImgViajarAgora} style={styles.image} />
+          <Text style={styles.buttonText}>Viajar agora</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => {
+            setMostrarHorario(true);
+          }}
+        >
+          <Image source={ImgViajarMaisTarde} style={styles.imageLater} />
+          <Text style={styles.buttonText}>Viajar mais tarde</Text>
+        </TouchableOpacity>
+
+        {mostrarHorario && (
+          <DateTimePicker
+            value={dataHora}
+            mode="time"
+            is24Hour={true}
+            display="default"
+            onChange={(event, selectedDate) => {
+              if (event.type === 'set' && selectedDate) {
+                setDataHora(selectedDate);
+              }
+              setMostrarHorario(false);
+              handleViajar();
+            }}
+          />
+        )}
+      </View>
+    </React.Fragment>
   );
 }
 
@@ -216,5 +269,43 @@ const styles = StyleSheet.create({
     padding: 10,
     borderBottomWidth: 1,
     borderBottomColor: '#ccc',
+  },
+  buttonRow: {
+    height: 200,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    gap: 50,
+    width: '100%',
+  },
+  button: {
+    height: 110,
+    width: 110,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderColor: '#D9D9D9',
+    borderWidth: 2,
+    top: 90,
+    borderRadius: 20,
+  },
+  buttonText: {
+    fontWeight: 'bold',
+    textAlign: 'center',
+    fontSize: 11,
+    position: "absolute",
+    bottom: 15,
+
+  },
+  image: {
+    width: '60%',
+    height: '60%',
+    resizeMode: 'contain',
+  },
+  imageLater: {
+    width: '60%',
+    height: '60%',
+    resizeMode: 'contain',
+    marginLeft: 10,
+    position: "absolute",
+    bottom: "29%",
   },
 });
