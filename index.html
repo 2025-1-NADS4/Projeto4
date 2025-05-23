@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="assets/Logo_FASOR.png" type="image/png">
+  <title>FASOR – Fare Advisor</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --pink-fasor: #DD0483;
+      --black-primary: #000000;
+      --black-secondary: #111111;
+    }
+
+    /* Animação fade-in ao carregar */
+    body {
+      opacity: 0;
+      transition: opacity 1.5s ease-in;
+    }
+    body.loaded {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="bg-[var(--black-primary)] text-white font-sans">
+
+  <!-- Script para iniciar animação após carregamento -->
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("loaded");
+    });
+  </script>
+
+  <!-- Header -->
+  <header class="bg-[var(--black-secondary)] shadow">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl sm:text-4xl font-bold flex items-center">
+  <img src="assets/Logo_FASOR.png" alt="Logo Fasor" class="h-12 w-15 object-contain mr-2">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+
+  
+    </h1>
+      <nav class="bg-black text-white px-4 py-3 shadow-md fixed top-0 left-0 w-full z-50">
+  <div class="flex items-center justify-between max-w-6xl mx-auto">
+    <div class="flex items-center">
+      <img src="assets/Logo_FASOR.png" alt="Logo Fasor" class="h-12 w-15 object-contain mr-2">
+      
+    </div>
+
+            <!-- Ícone do menu para mobile -->
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none text-2xl">
+            ☰
+            </button>
+
+            <!-- Links de navegação -->
+            <ul id="menu" class="hidden md:flex space-x-6 font-medium">
+            <li><a href="#sobre" class="hover:text-[#DD0483] transition">Sobre</a></li>
+            <li><a href="#funcionalidades" class="hover:text-[#DD0483] transition">Funcionalidades</a></li>
+            <li><a href="#equipe" class="hover:text-[#DD0483] transition">Equipe</a></li>
+            <li><a href="#contato" class="hover:text-[#DD0483] transition">Contato</a></li>
+            </ul>
+        </div>
+
+        <!-- Menu Mobile (abre abaixo da navbar) -->
+        <ul id="mobile-menu" class="md:hidden hidden flex-col mt-3 space-y-2 bg-black px-4 py-2 font-medium rounded">
+            <li><a href="#sobre" class="block hover:text-[#DD0483] transition">Sobre</a></li>
+            <li><a href="#funcionalidades" class="block hover:text-[#DD0483] transition">Funcionalidades</a></li>
+            <li><a href="#equipe" class="block hover:text-[#DD0483] transition">Equipe</a></li>
+            <li><a href="#contato" class="block hover:text-[#DD0483] transition">Contato</a></li>
+        </ul>
+        </nav>
+
+    </div>
+  </header>
+
+  <button onclick="scrollToTop()" id="topBtn"
+  class="hidden fixed bottom-6 right-6 bg-[var(--pink-fasor)] text-white px-4 py-2 rounded-full shadow-lg hover:bg-pink-700 transition">
+  ↑ Topo
+</button>
+
+<script>
+  // Mostrar o botão após rolar a página
+  window.onscroll = () => {
+    const btn = document.getElementById("topBtn");
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      btn.classList.remove("hidden");
+    } else {
+      btn.classList.add("hidden");
+    }
+  };
+
+  // Função para rolar até o topo
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+  <!-- Hero -->
+  <section class="bg-[var(--pink-fasor)] text-white py-20 text-center">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-4">Economize em corridas corporativas com o FASOR</h2>
+      <p class="text-lg mb-6">Nosso app utiliza inteligência artificial para comparar tarifas de apps como Uber e 99 em tempo real.</p>
+      <p class="text-lg mb-6">Um dos únicos apps multiplataforma do mercado</p>
+      <a href="#contato" class="bg-white text-[var(--pink-fasor)] px-6 py-3 rounded-lg font-semibold hover:bg-gray-200">Solicitar Demonstração</a>
+    </div>
+  </section>
+
+  <!-- Sobre -->
+  <section id="sobre" class="py-16 bg-[var(--black-primary)]">
+    <div class="container mx-auto px-6 text-center">
+      <h3 class="text-3xl font-bold mb-4 text-white">Sobre o Projeto</h3>
+      <p class="text-lg max-w-2xl mx-auto text-gray-300">O FASOR – Fare Advisor é um aplicativo B2B que ajuda empresas a economizarem no uso de transporte por aplicativo, utilizando aprendizado de máquina para indicar, em tempo real, a melhor opção de corrida para seus colaboradores.</p>
+      
+      <!-- Imagens do app -->
+      <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <img src="assets/mobile/Imagem1.png" class="mx-auto rounded shadow-lg">
+        <img src="assets/mobile/Imagem2.png" class="mx-auto rounded shadow-lg">
+        <img src="assets/mobile/Imagem3.png" class="mx-auto rounded shadow-lg">
+        <img src="assets/mobile/Imagem4.png" class="mx-auto rounded shadow-lg">
+      </div>
+    </div>
+  </section>
+
+  <!-- Frase de Efeito (antes das funcionalidades) -->
+<section class="py-20 bg-[var(--black-secondary)] text-center">
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-bold mb-4">Rápido, ágil e eficiente</h2>
+    <p class="text-lg text-gray-300 mb-6">Soluções inteligentes para transporte corporativo</p>
+    <a href="#contato" class="bg-[var(--pink-fasor)] text-white px-6 py-3 rounded-lg font-semibold hover:bg-pink-700 transition">Solicitar Demonstração</a>
+  </div>
+</section>
+
+  <!-- Funcionalidades -->
+  <section id="funcionalidades" class="py-16 bg-[var(--black-primary)]">
+    <div class="container mx-auto px-6 text-center">
+      <h3 class="text-3xl font-bold mb-12 text-white">Funcionalidades</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-300">
+        <div class="bg-[var(--black-secondary)] p-6 rounded shadow transform transition duration-300 hover:scale-105">
+        <img src="assets/icons/coin.svg" alt="Interface Intuitiva" class="w-16 h-16 mx-auto mb-4">
+          <h4 class="text-xl font-semibold mb-2 text-[var(--pink-fasor)]">Comparação de Preços</h4>
+          <p>Analisa e compara valores de Uber e 99 em tempo real para encontrar a tarifa mais econômica.</p>
+        </div>
+        <div class="bg-[var(--black-secondary)] p-6 rounded shadow transform transition duration-300 hover:scale-105">
+        <img src="assets/icons/robot.svg" alt="Interface Intuitiva" class="w-16 h-16 mx-auto mb-4">
+          <h4 class="text-xl font-semibold mb-2 text-[var(--pink-fasor)]">IA e Machine Learning</h4>
+          <p>Modelo treinado com dados reais para prever variações de tarifa e recomendar horários ideais.</p>
+        </div>
+        <div class="bg-[var(--black-secondary)] p-6 rounded shadow transform transition duration-300 hover:scale-105">
+        <img src="assets/icons/file-earmark-bar-graph.svg" alt="Interface Intuitiva" class="w-16 h-16 mx-auto mb-4">
+          <h4 class="text-xl font-semibold mb-2 text-[var(--pink-fasor)]">Histórico de corridas</h4>
+          <p>Usuários das empresas acompanham o histórico de corridas passadas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diferenciais -->
+<section id="diferenciais" class="py-16 bg-[var(--black-secondary)] text-center">
+  <div class="container mx-auto px-6">
+    <h3 class="text-3xl font-bold mb-12 text-white">Nossos Diferenciais</h3>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-gray-300">
+      <div class="p-6 bg-[var(--black-primary)] rounded shadow hover:scale-105 transition">
+        <img src="assets/icons/emoji-smile.svg" alt="Interface Intuitiva" class="w-16 h-16 mx-auto mb-4">
+        <h4 class="text-xl text-[var(--pink-fasor)] font-semibold mb-2">Interface Intuitiva</h4>
+        <p>Navegação simples e amigável, sem complicações.</p>
+      </div>
+      <div class="p-6 bg-[var(--black-primary)] rounded shadow hover:scale-105 transition">
+        <img src="assets/icons/phone.svg" alt="Interface Intuitiva" class="w-16 h-16 mx-auto mb-4">
+        <h4 class="text-xl text-[var(--pink-fasor)] font-semibold mb-2">Multiplataforma</h4>
+        <p>Compatível com Android e iOS, liquidando barreiras operacionais.</p>
+      </div>
+      <div class="p-6 bg-[var(--black-primary)] rounded shadow hover:scale-105 transition">
+        <img src="assets/icons/fingerprint.svg" alt="Interface Intuitiva" class="w-16 h-16 mx-auto mb-4">
+        <h4 class="text-xl text-[var(--pink-fasor)] font-semibold mb-2">Aplicativo Seguro</h4>
+        <p>Segurança e privacidade como prioridade.</p>
+      </div>
+      <div class="p-6 bg-[var(--black-primary)] rounded shadow hover:scale-105 transition">
+        <img src="assets/icons/speedometer.svg" alt="Interface Intuitiva" class="w-16 h-16 mx-auto mb-4">
+        <h4 class="text-xl text-[var(--pink-fasor)] font-semibold mb-2">Ótima Performance</h4>
+        <p>Leve, rápido e eficiente mesmo em conexões instáveis.</p>
+      </div>
+    </div>
+
+    <!-- Link para página técnica -->
+    <div class="mt-10">
+      <a href="pagina-tecnica.html" class="text-[var(--pink-fasor)] underline hover:text-pink-300 transition">Veja mais detalhes técnicos e como rodar a aplicação →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Frase de Efeito (antes da equipe) -->
+<section class="py-20 bg-[var(--black-primary)] text-center">
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-bold mb-4">Tudo isso na palma da sua mão, não perca tempo</h2>
+    <p class="text-lg text-gray-300 mb-6">Otimize agora os deslocamentos corporativos com o FASOR</p>
+    <a href="#contato" class="bg-[var(--pink-fasor)] text-white px-6 py-3 rounded-lg font-semibold hover:bg-pink-700 transition">Solicitar Demonstração</a>
+  </div>
+</section>
+
+
+  <!-- Equipe -->
+  <section id="equipe" class="py-16 bg-[var(--black-secondary)]">
+    <div class="container mx-auto px-6 text-center">
+      <h3 class="text-3xl font-bold mb-12 text-white">Nossa Equipe</h3>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 text-gray-300">
+        <!-- Isaac -->
+        <div>
+          <img src="assets/Isaac.jpeg" class="w-28 h-28 rounded-full mx-auto mb-2 border-2 border-[var(--pink-fasor)]" alt="Isaac">
+          <a href="https://www.linkedin.com/in/isaac-fs-santos/" target="_blank" class="text-[var(--pink-fasor)] font-semibold hover:underline">Isaac Santos</a>
+          <p>Análise de dados e IA</p>
+        </div>
+        <!-- Giovanne -->
+        <div>
+          <img src="assets/Giovanne.jpeg" class="w-28 h-28 rounded-full mx-auto mb-2 border-2 border-[var(--pink-fasor)]" alt="Giovanne">
+          <a href="https://www.linkedin.com/in/giovanne-braga-0a4288280/" target="_blank" class="text-[var(--pink-fasor)] font-semibold hover:underline">Giovanne Braga</a>
+          <p>Arquiteto de Software e Dev</p>
+        </div>
+        <!-- Ícaro -->
+        <div>
+          <img src="assets/Icaro.jpeg" class="w-28 h-28 rounded-full mx-auto mb-2 border-2 border-[var(--pink-fasor)]" alt="Ícaro">
+          <a href="https://www.linkedin.com/in/icaro-dellalo/" target="_blank" class="text-[var(--pink-fasor)] font-semibold hover:underline">Ícaro Dellalo</a>
+          <p>Gestão de Projetos e Cibersegurança</p>
+        </div>
+        <!-- Carol -->
+        <div>
+          <img src="assets/Carol.jpeg" class="w-28 h-28 rounded-full mx-auto mb-2 border-2 border-[var(--pink-fasor)]" alt="Carol">
+          <a href="https://www.linkedin.com/in/caroline-gomes-446882230/" target="_blank" class="text-[var(--pink-fasor)] font-semibold hover:underline">Carol Gomes</a>
+          <p>Empreendedorismo e UX</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="py-16 bg-[var(--black-primary)]">
+    <div class="container mx-auto px-6 text-center">
+      <h3 class="text-3xl font-bold mb-6 text-white">Entre em Contato</h3>
+      <p class="mb-4 text-gray-300">Quer implementar o FASOR na sua empresa, ficou com alguma dúvida ou quer dar um feedback? Fale com a gente!</p>
+      <a href="https://forms.gle/7pFjiSNJXCjceDka7" target="_blank" class="bg-[var(--pink-fasor)] text-white px-6 py-3 rounded-lg font-semibold hover:bg-pink-700">Acessar Formulário</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[var(--black-primary)] border-t border-gray-700 py-6 text-center text-sm text-gray-500">
+    © 2025 FASOR – Fare Advisor. Creative Commons Attribution 4.0 International.
+  </footer>
+
+    <script>
+    const toggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    toggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+    </script>
+
+
+</body>
+</html>
